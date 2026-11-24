@@ -322,7 +322,7 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-r
         <span class="astat" id="refreshStat">从 GitHub 仓库拉取最新的词语表与语料文件</span>
       </div>
       <div class="searchwrap">
-        <input type="text" id="q" placeholder="输入中文词或短语，如：新质生产力 / 新安全格局 / 全球治理倡议" autocomplete="off">
+        <input type="text" id="q" placeholder="输入中文词或短语，如：定心丸 / 新安全格局 / 全球治理倡议" autocomplete="off">
         <button class="btn" id="btnSearch" type="button">查询</button>
       </div>
       <div class="opts">
@@ -2016,18 +2016,27 @@ function buildCorpusAdminPage(){
   $('save').onclick=function(){
     if(!token){ alert('请先解锁并填入令牌'); return; }
     $('stat').textContent='提交中…';
-    ghSha('data/corpus.json').then(function(sha){
-      var body={message:'edit corpus '+new Date().toISOString().slice(0,10),content:b64enc(JSON.stringify({updatedAt:new Date().toISOString(),folders:folders,files:files},null,1)),branch:D.branch};
-      if(sha) body.sha=sha;
-      return fetch('https://api.github.com/repos/'+encodeURIComponent(D.owner)+'/'+encodeURIComponent(D.repo)+'/contents/data/corpus.json',{
-        method:'PUT',
-        headers:{'Authorization':String.fromCharCode(66,101,97,114,101,114)+' '+token,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
-        body:JSON.stringify(body)
+    function attempt(n){
+      return ghSha('data/corpus.json').then(function(sha){
+        var body={message:'edit corpus '+new Date().toISOString().slice(0,10),content:b64enc(JSON.stringify({updatedAt:new Date().toISOString(),folders:folders,files:files},null,1)),branch:D.branch};
+        if(sha) body.sha=sha;
+        return fetch('https://api.github.com/repos/'+encodeURIComponent(D.owner)+'/'+encodeURIComponent(D.repo)+'/contents/data/corpus.json',{
+          method:'PUT',
+          headers:{'Authorization':String.fromCharCode(66,101,97,114,101,114)+' '+token,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
+          body:JSON.stringify(body)
+        });
+      }).then(function(r){
+        if(r.ok){ $('stat').textContent='已提交，约 1 分钟后生效'; return; }
+        return r.text().then(function(t){
+          if(r.status===409 && n<3 && /does not match|conflict/i.test(t)){
+            $('stat').textContent='版本冲突，自动重试第 '+(n+1)+' 次…';
+            return new Promise(function(res){ setTimeout(res,500*(n+1)); }).then(function(){ return attempt(n+1); });
+          }
+          throw new Error('GitHub '+r.status+' '+String(t).slice(0,200));
+        });
       });
-    }).then(function(r){
-      if(!r.ok) return r.text().then(function(t){ throw new Error('GitHub '+r.status+' '+String(t).slice(0,200)); });
-      $('stat').textContent='已提交，约 1 分钟后生效';
-    }).catch(function(e){ $('stat').textContent='提交失败：'+e.message; });
+    }
+    attempt(0).catch(function(e){ $('stat').textContent='提交失败：'+e.message; });
   };
 })();
 `;
@@ -2752,13 +2761,29 @@ async function ghRead(path){
     throw e;
   }
 }
-async function ghWrite(path,obj,msg){
+let ghQueue=Promise.resolve();
+function ghWrite(path,obj,msg){
+  /* 串行排队：同一时刻只发一笔提交，避免自动同步与手动保存互相撞版本 */
+  const job=ghQueue.then(()=>ghWriteRetry(path,obj,msg,0));
+  ghQueue=job.catch(()=>{});
+  return job;
+}
+async function ghWriteRetry(path,obj,msg,attempt){
   const cur=await ghRead(path);
   const body={message:msg||('update '+path),content:b64enc(JSON.stringify(obj,null,1))};
   if(share.branch) body.branch=share.branch;
   if(cur.sha) body.sha=cur.sha;
-  await ghFetch(path,{method:'PUT',body:JSON.stringify(body)});
-  return true;
+  try{
+    await ghFetch(path,{method:'PUT',body:JSON.stringify(body)});
+    return true;
+  }catch(e){
+    /* 409 = 版本号过期（别处刚提交过）：重取最新版本号再试，最多 3 次 */
+    if(attempt<3 && /409/.test(e.message) && /does not match|conflict/i.test(e.message)){
+      await new Promise(r=>setTimeout(r,400*(attempt+1)));
+      return ghWriteRetry(path,obj,msg,attempt+1);
+    }
+    throw e;
+  }
 }
 function setDataSrc(t){ const e=$('dataSrc'); if(e) e.textContent=t?('　'+t):''; }
 function renderRepoSummary(){
