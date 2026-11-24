@@ -1749,6 +1749,16 @@ function buildGlossaryPage(){
     if(st) st.textContent = ok
       ? ('已同步到主页面（'+list.length+' 条）')
       : ('改动已存在本机（'+list.length+' 条）。若主页面没有更新，点「复制词语表 JSON」，回主页面在设置里粘贴应用。');
+    autoPushGH();
+  }
+  var glossAutoT=null;
+  function autoPushGH(){
+    try{
+      var tk=($('tk')&&$('tk').value||'').trim();
+      if(!tk||!GH.owner||!GH.repo) return;
+      clearTimeout(glossAutoT);
+      glossAutoT=setTimeout(function(){ pushGH(); },1200);
+    }catch(e){}
   }
   function copyJson(){
     var txt=JSON.stringify(list);
@@ -2146,7 +2156,7 @@ function confirmAddGloss(zh,en,src,note){
 function addGloss(zh,en,src,note){
   if(glossary.some(g=>g.zh===zh&&g.en===en)){ toast('词语表已有该条目'); return; }
   glossary.unshift({zh:zh,en:en,src:src||'',note:note||'',ts:Date.now()});
-  saveGloss(); toast('已存入词语表：'+zh+' → '+en);
+  saveGloss(); scheduleGlossPush(); toast('已存入词语表：'+zh+' → '+en+'（自动同步到仓库）');
 }
 function renderGloss(){
   const gc=$('gCount'); if(gc) gc.textContent=glossary.length+' 条';
@@ -2468,7 +2478,7 @@ function renderGlossHits(terms){
     gh.appendChild(el('span','ge',g.en));
     if(g.src) gh.appendChild(el('span','df',g.src));
     const del=el('button','more','删除'); del.type='button';
-    del.addEventListener('click',()=>{ glossary=glossary.filter(o=>o!==g); saveGloss(); renderStats(); renderGlossHits(lastTerms); });
+    del.addEventListener('click',()=>{ glossary=glossary.filter(o=>o!==g); saveGloss(); scheduleGlossPush(); renderStats(); renderGlossHits(lastTerms); });
     gh.appendChild(del);
     const units=glossaryUnitsFor(g);
     if(units.length){
@@ -2786,6 +2796,17 @@ async function ghWriteRetry(path,obj,msg,attempt){
   }
 }
 function setDataSrc(t){ const e=$('dataSrc'); if(e) e.textContent=t?('　'+t):''; }
+let glossPushT=null;
+function scheduleGlossPush(){
+  if(!ghReady()) return;
+  clearTimeout(glossPushT);
+  glossPushT=setTimeout(async()=>{
+    try{
+      await ghWrite('data/glossary.json',{updatedAt:new Date().toISOString(),items:glossary},'auto: glossary '+new Date().toISOString().slice(0,16));
+      setDataSrc('词语表已自动同步到仓库');
+    }catch(e){ setDataSrc('词语表自动同步失败：'+e.message+'（可打开词语表手动推送）'); }
+  },1200);
+}
 function renderRepoSummary(){
   const n=$('repoCount'), L=$('repoLatest');
   if(n) n.textContent=corpus.length+' 个';
@@ -2940,7 +2961,7 @@ function importCSV(file){
       if(glossary.some(g=>g.zh===zh&&g.en===en)) return;
       glossary.push({zh:zh,en:en,src:(cells[2]||'').trim(),note:(cells[3]||'导入'),ts:Date.now()}); added++;
     });
-    saveGloss(); toast(added?('导入 '+added+' 条'):'没有新条目（可能已存在）');
+    saveGloss(); if(added) scheduleGlossPush(); toast(added?('导入 '+added+' 条（自动同步到仓库）'):'没有新条目（可能已存在）');
   };
   fr.readAsText(file,'utf-8');
 }
