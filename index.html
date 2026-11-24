@@ -322,7 +322,7 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-r
         <span class="astat" id="refreshStat">从 GitHub 仓库拉取最新的词语表与语料文件</span>
       </div>
       <div class="searchwrap">
-        <input type="text" id="q" placeholder="输入中文词或短语，如：新质生产力 / 新安全格局 / 全球治理倡议" autocomplete="off">
+        <input type="text" id="q" placeholder="输入中文词或短语，如：定心丸 / 新安全格局 / 全球治理倡议" autocomplete="off">
         <button class="btn" id="btnSearch" type="button">查询</button>
       </div>
       <div class="opts">
@@ -334,7 +334,7 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-r
       </div>
       <div class="recents" id="recents"></div>
       <div class="row" id="recentTools" style="margin-top:6px" hidden>
-        <button class="iconbtn" id="btnClrRecent" type="button">清空查询记录</button>
+        <button class="iconbtn" id="btnClrRecent" type="button">清空搜索历史</button>
       </div>
       <div class="bar" id="bar"><i></i></div>
     </section>
@@ -415,7 +415,6 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-r
         <button class="iconbtn" id="ghPull" type="button">从仓库拉取</button>
         <button class="iconbtn" id="ghPushG" type="button">推送词语表</button>
         <button class="iconbtn" id="ghPushC" type="button">推送语料</button>
-        <button class="iconbtn" id="ghSyncLog" type="button">同步查询记录</button>
         <button class="iconbtn" id="ghEditCorpus" type="button">编辑语料库</button>
       </div>
       <div class="astat" id="ghStat"></div>
@@ -618,7 +617,7 @@ function loadCorpus(){
     const p=JSON.parse(raw);
     const files=Array.isArray(p)?p:(p.files||[]);
     corpus=files.map(f=>({name:f.name,folder:f.folder||'',origin:f.origin||'docx',urls:f.urls||{},importedAt:f.importedAt||null,
-      units:(f.units||[]).map(u=>Object.assign({ai:null,kind:'para'},u))}));
+      units:(f.units||[]).map(u=>Object.assign({file:f.name,ai:null,kind:'para'},u))}));
   }catch(e){}
 }
 function saveCorpus(){
@@ -1450,7 +1449,6 @@ function runSearch(){
 
   try{ renderCandidates(hits,terms); }catch(e){ errStep('候选译法',e); }
   try{ renderVerdict(); }catch(e){ errStep('结论卡',e); }
-  try{ logQuery(raw,hits.length); scheduleLogSync(); }catch(e){}
 
   if(!hits.length){ toast('没找到包含这些词的对照段落，可换个更短的词试试'); }
 }
@@ -1460,14 +1458,15 @@ function renderSummary(hits,terms){
   const box=$('summary'); box.hidden=false;
   $('hitCount').textContent=hits.length;
   const byFile={};
-  hits.forEach(h=>{ byFile[h.u.file]=(byFile[h.u.file]||0)+1; });
+  hits.forEach(h=>{ const nm=h.u.file||'（未知来源）'; byFile[nm]=(byFile[nm]||0)+1; });
   const keys=Object.keys(byFile);
   const sp=$('fileSpread'); sp.textContent='';
-  keys.sort((a,b)=>byFile[b]-byFile[a]).slice(0,6).forEach((k,i)=>{
-    if(i) sp.appendChild(document.createTextNode(' · '));
-    const s=el('span'); s.textContent=k.slice(0,16)+' '+byFile[k]; s.title=k; sp.appendChild(s);
-  });
-  if(keys.length>6) sp.appendChild(el('span',null,' 等 '+keys.length+' 个文件'));
+  keys.sort((a,b)=>byFile[b]-byFile[a]);
+  if(keys.length){
+    const s=el('span');
+    s.textContent=keys[0]+(keys.length>1?('　等 '+keys.length+' 个文件'):'');
+    s.title=keys.join('、'); sp.appendChild(s);
+  }
   updateModeTag();
   $('btnAI').hidden=!($('optAI').checked);
   $('btnCopyPrompt').hidden=!($('optAI').checked);
@@ -2087,7 +2086,7 @@ function renderResults(hits,terms){
     if(u.unpaired) head.appendChild(el('span','loc','仅单侧有文'));
     const op=el('button','openbtn','打开原文'); op.type='button';
     op.title='在新标签打开该文件的完整中英对照（网页来源则打开原网址）';
-    op.addEventListener('click',ev=>{ ev.stopPropagation(); openSourceFile(corpus.find(o=>o.name===u.file)||{name:u.file,units:[u]},u.idx); });
+    op.addEventListener('click',ev=>{ ev.stopPropagation(); openSourceFile(corpus.find(o=>o.name===u.file)||corpus.find(o=>o.units.some(x=>x===u))||{name:u.file,units:[u]},u.idx); });
     head.appendChild(op);
     const hit=el('span','hit'); hit.textContent=h.hit.map(x=>x.t).join(' '); head.appendChild(hit);
     card.appendChild(head);
@@ -2424,7 +2423,7 @@ function renderVerdict(){
   $('vTerm').textContent=v.best;
   $('vMeta').textContent=(v.source==='ai'
       ? ('AI 已核对 '+(v.aiCovered||v.count)+'/'+v.hits+' 段 · 该译法 '+v.count+' 段支持')
-      : (v.source==='glossary'?'本地词语表收录 · ':'共现统计 · '))
+      : (v.source==='glossary'?'词语表收录 · ':'共现统计 · '))
     +(v.source==='ai'?'':(v.source==='glossary'?(v.count+' 条记录'):(v.count+'/'+v.hits+' 段一致')));
   const items=[{en:v.best,n:v.count}].concat(v.alts.map(a=>({en:a.en,n:a.count})));
   const sum=items.reduce((s,x)=>s+x.n,0)||1;
@@ -2444,7 +2443,7 @@ function renderVerdict(){
   });
   let t;
   if(v.source==='glossary'){
-    t='该译法来自本地词语表（你此前确认过的条目），无需联网。若这批文件里出现不同译法，建议点「AI 精确抽取全部命中」再核一次。';
+    t='该译法来自词语表（你此前确认过的条目）。若这批文件里出现不同译法，建议点「AI 精确抽取全部命中」再核一次。';
   }else if(v.source==='ai'&&v.aiCovered<v.hits){
     t='注意：AI 只核对了 '+v.aiCovered+'/'+v.hits+' 段，其余段落尚未核对。下方备选已把「共现」候选一并列出（标注共现 N 段），若某个共现候选覆盖段数更多，它可能才是这批文件的主译法——建议点「AI 精确抽取全部命中」把剩余段落补齐。';
   }else if(v.source==='ai'){
@@ -2469,7 +2468,7 @@ function renderGlossHits(terms){
     box.appendChild(el('div','gp-note','在下方结果里点候选词，或点结果卡片上的「存入词语表」，就会出现在这里。'));
     return;
   }
-  box.appendChild(el('div','known','本地词语表命中 '+list.length+' 条 · 无需联网'));
+  box.appendChild(el('div','known','词语表命中 '+list.length+' 条'));
   list.slice(0,8).forEach(g=>{
     const card=el('div','gphit');
     const gh=el('div','gh');
@@ -2728,7 +2727,7 @@ async function openOriginalByName(name){
 }
 
 /* SECTION: share —— GitHub 仓库共享数据（读公开、写需各自令牌） */
-const K_SHARE='cn2en.share.v1', K_QLOG='cn2en.qlog.v1';
+const K_SHARE='cn2en.share.v1';
 let share={owner:'',repo:'',branch:'main',token:''};
 function loadShare(){
   try{ share=Object.assign(share,JSON.parse(S.get(K_SHARE)||'{}')); }catch(e){}
@@ -2858,47 +2857,6 @@ function scheduleRepoPush(){
       setRepoStat('已同步到仓库 · 约 1 分钟后访客可见');
     }catch(e){ setRepoStat('同步失败：'+e.message+'（可点「保存到仓库」重试）'); }
   },1500);
-}
-function logQuery(word,hits){
-  try{
-    const k=String(word||'').trim().slice(0,80); if(!k) return;
-    const m=JSON.parse(S.get(K_QLOG)||'{}');
-    const r=m[k]||{count:0,hits:0,lastAt:0};
-    r.count++; r.hits+=(hits||0); r.lastAt=Date.now();
-    m[k]=r; S.set(K_QLOG,JSON.stringify(m));
-  }catch(e){}
-}
-function localQLogCount(){ try{ return Object.keys(JSON.parse(S.get(K_QLOG)||'{}')).length; }catch(e){ return 0; } }
-let logTimer=null, logPending=false, logRetry=null, logFails=0;
-function scheduleLogSync(){
-  if(!ghReady()) return;
-  if(logFails>=2){ setDataSrc('查询记录暂无法提交（已停止自动重试）'); return; }
-  logPending=true;
-  clearTimeout(logTimer);
-  logTimer=setTimeout(async()=>{
-    if(!logPending) return;
-    logPending=false;
-    try{ await syncQueryLog(); logFails=0; setDataSrc('查询记录已自动提交'); }
-    catch(e){
-      logFails++;
-      if(logFails>=2){ setDataSrc('查询记录提交失败，已停止自动重试（可点「刷新」重试）'); return; }
-      setDataSrc('查询记录提交失败，8 秒后重试一次');
-      clearTimeout(logRetry);
-      logRetry=setTimeout(()=>{ logPending=true; scheduleLogSync(); },8000);
-    }
-  },1200);
-}
-async function syncQueryLog(){
-  const local=JSON.parse(S.get(K_QLOG)||'{}');
-  const remote=(await ghRead('data/query-log.json')).data||{words:{}};
-  const w=Object.assign({},remote.words||{});
-  Object.keys(local).forEach(k=>{
-    const a=w[k]||{count:0,hits:0,lastAt:0}, b=local[k];
-    w[k]={count:(a.count||0)+(b.count||0),hits:(a.hits||0)+(b.hits||0),
-      lastAt:Math.max(a.lastAt||0,b.lastAt||0)};
-  });
-  await ghWrite('data/query-log.json',{updatedAt:new Date().toISOString(),words:w},'sync query log');
-  return Object.keys(w).length;
 }
 function pullToCorpus(d){
   if(!d||!Array.isArray(d.files)) return 0;
@@ -3093,7 +3051,7 @@ async function init(){
   $('btnClrEn').addEventListener('click',()=>{ $('enSrc').value=''; toast('已清空英文框'); });
   $('optAuto').addEventListener('change',()=>{
     if($('optAuto').checked){
-      if(!confirm('本功能需调用API，每次使用需约0.02元，请合理使用')){
+      if(!confirm('本功能需消耗付费token，价格虽然超级低，但也请合理使用，谢谢~')){
         $('optAuto').checked=false; cfg.autoAI=false; S.set(K_CFG,JSON.stringify(cfg)); updateModeTag(); return;
       }
       cfg.autoAI=true;
@@ -3176,7 +3134,7 @@ async function init(){
   $('gmask').addEventListener('click',e=>{ if(e.target===$('gmask')){ $('gmask').classList.remove('on'); pendGloss=null; } });
   $('gmZh').addEventListener('keydown',e=>{ if(e.key==='Enter') $('gmEn').focus(); });
   $('gmEn').addEventListener('keydown',e=>{ if(e.key==='Enter') $('gmOk').click(); });
-  $('btnClrRecent').addEventListener('click',()=>{ if(confirm('清空全部查询记录？')){ S.set(K_RECENT,'[]'); renderRecent(); toast('查询记录已清空'); } });
+  $('btnClrRecent').addEventListener('click',()=>{ if(confirm('清空全部搜索历史？')){ S.set(K_RECENT,'[]'); renderRecent(); toast('搜索历史已清空'); } });
   $('btnExp2').addEventListener('click',exportCSV);
   ['ghOwner','ghRepo','ghBranch','ghToken'].forEach(id=>{
     const e=$(id); if(!e) return;
@@ -3206,19 +3164,7 @@ async function init(){
     await ghWrite('data/corpus.json',{updatedAt:new Date().toISOString(),folders:folders.slice(),files:snap.files},'update corpus '+new Date().toISOString().slice(0,10));
     return snap.files.length+' 个文件已提交，约 1 分钟后生效';
   }));
-  $('ghSyncLog').addEventListener('click',()=>ghRun('同步查询记录',async()=>{
-    const n=await syncQueryLog(); return '仓库内共 '+n+' 个词';
-  }));
-  $('ghEditCorpus').addEventListener('click',openCorpusAdmin);
-  $('gApply').addEventListener('click',()=>{
-    const raw=($('gPaste').value||'').trim();
-    if(!raw){ toast('先粘贴词语表 JSON'); return; }
-    let arr;
-    try{ arr=JSON.parse(raw); }catch(e){ toast('JSON 解析失败：'+e.message); return; }
-    if(!Array.isArray(arr)&&arr&&Array.isArray(arr.glossary)) arr=arr.glossary;
-    if(!Array.isArray(arr)){ toast('需要一个数组，或含 glossary 数组的对象'); return; }
-    if(applyGlossaryFrom(arr,'手动粘贴')){ $('gPaste').value=''; $('mask').classList.remove('on'); }
-  });
+
   $('btnImp2').addEventListener('click',()=>$('csvfile2').click());
   $('csvfile2').addEventListener('change',e=>{ if(e.target.files[0]) importCSV(e.target.files[0]); e.target.value=''; });
 
