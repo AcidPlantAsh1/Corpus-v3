@@ -2,8 +2,8 @@
  "units": [
   {
    "idx": 1,
-   "zh": "习近平在纪念中国人民抗日战争暨世界反法西斯战争胜利80周年大会上的讲话",
-   "en": "Address by H.E. Xi Jinping at the Commemoration of the 80th Anniversary of the Victory of the Chinese People’s War of Resistance Against Japanese Aggression and the World Anti-Fascist War 2025年9月3日   September 03, 2025",
+   "zh": "就当前经济形势和下半年经济工作 中共中央召开党外人士座谈会 习近平主持并发表重要讲话 李强通报有关情况 王沪宁蔡奇丁薛祥出席",
+   "en": "CPC leadership holds symposium to seek advice from non-CPC personages on economic work",
    "kind": "para",
    "zp": [
     1,
@@ -11,175 +11,133 @@
    ],
    "ep": [
     2,
-    3
+    2
    ]
   },
   {
    "idx": 2,
-   "zh": "全国同胞们， 尊敬的各位国家元首、政府首脑和国际组织代表， 尊敬的各位来宾， 全体受阅将士们， 同志们、朋友们：",
-   "en": "All my fellow Chinese across the nation, Your Excellencies heads of state and government and representatives of international organizations, Distinguished guests, All officers and soldiers participating in the parade, Comrades and friends,",
+   "zh": "新华社北京7月30日电 7月23日，中共中央在中南海召开党外人士座谈会，就当前经济形势和下半年经济工作听取各民主党派中央、全国工商联负责人和无党派人士代表的意见建议。中共中央总书记习近平主持座谈会并发表重要讲话强调，做好下半年经济工作，要坚持稳中求进工作总基调，完整准确全面贯彻新发展理念，加快构建新发展格局，保持政策连续性稳定性，增强灵活性预见性，着力稳就业、稳企业、稳市场、稳预期，有力提振消费、破除“内卷”，畅通国内大循环，促进国内国际双循环，努力完成全年经济社会发展目标任务，实现“十四五”圆满收官。",
+   "en": "BEIJING, Aug. 1 (Xinhua) -- The Communist Party of China (CPC) Central Committee held a symposium at Zhongnanhai in Beijing on July 23 to solicit opinions and suggestions from chairpersons of the central committees of non-CPC political parties and the All-China Federation of Industry and Commerce (ACFIC), as well as representatives of personages without party affiliation, on the country's current economic situation and economic work for the second half of the year.",
    "kind": "para",
    "zp": [
-    4,
-    4
+    3,
+    3
    ],
    "ep": [
-    5,
-    5
+    4,
+    4
    ]
   },
   {
    "idx": 3,
-   "zh": "今天，我们隆重集会，纪念中国人民抗日战争暨世界反法西斯战争胜利80周年，共同铭记历史、缅怀先烈、珍爱和平、开创未来。",
-   "en": "Today, we gather here to solemnly commemorate the 80th anniversary of the victory of the Chinese People’s War of Resistance Against Japanese Aggression and the World Anti-Fascist War. It is an occasion for us to remember history, honor fallen heroes, cherish peace, and create a better future.",
+   "zh": "中共中央政治局常委李强、王沪宁、蔡奇、丁薛祥出席座谈会。李强受中共中央委托通报了上半年经济工作有关情况，介绍了关于下半年经济工作有关考虑。",
+   "en": "Xi Jinping, general secretary of the CPC Central Committee, presided over the symposium and delivered an important speech. He stressed that to do a good job in economic work in the second half, it is necessary to adhere to the general principle of pursuing progress while ensuring stability, fully and faithfully apply the new development philosophy on all fronts, and move faster to create a new pattern of development. He urged efforts to maintain policy continuity and stability while enhancing flexibility and foresight, keep employment, businesses, markets and expectations stable, effectively bolster consumption, break free from \"rat race\" competition, facilitate domestic economic circulation, and promote the positive interplay between domestic and international economic flows, so that the annual objectives and targets for economic and social development can be accomplished to bring the 14th Five-Year Plan to a successful conclusion.",
    "kind": "para",
    "zp": [
-    6,
-    6
+    5,
+    5
    ],
    "ep": [
-    7,
-    7
+    6,
+    6
    ]
   },
   {
    "idx": 4,
-   "zh": "我代表中共中央、全国人大、国务院、全国政协、中央军委，向全国参加过抗日战争的老战士、老同志、爱国人士和抗日将领，向为中国人民抗日战争胜利作出重大贡献的海内外中华儿女，致以崇高敬意！向支援和帮助过中国人民抵抗侵略的外国政府和国际友人，表示衷心感谢！向参加今天大会的各国来宾，表示热烈欢迎！",
-   "en": "On behalf of the Central Committee of the Communist Party of China, the National People’s Congress, the State Council, the National Committee of the Chinese People’s Political Consultative Conference, and the Central Military Commission, I pay high tribute to our veteran soldiers and comrades, patriots, and officers who fought in the War of Resistance Against Japanese Aggression, and to the Chinese nationals from home and abroad who made important contributions to our victory. I express my sincere thanks to foreign governments and friends that supported and assisted the Chinese people in resisting aggression. I also extend a warm welcome to our guests from around the world who are with us today.",
+   "zh": "座谈会上，民革中央主席郑建邦、民盟中央主席丁仲礼、民建中央主席郝明金、民进中央主席蔡达峰、农工党中央主席何维、致公党中央主席蒋作君、九三学社中央主席武维华、台盟中央主席苏辉、全国工商联主席高云龙、无党派人士代表孙其信先后发言。他们完全赞同中共中央对当前经济形势的分析判断和下半年经济工作的考虑，并就推动科技创新和产业创新跨区域协同、促进文体旅商融合发展、促进服务业消费、超前布局有关未来产业、加快建设数据要素统一大市场、推进高质量城市更新、进一步激发民营企业活力、加强灵活就业群体社会保障等提出意见和建议。",
+   "en": "Li Qiang, Wang Huning, Cai Qi and Ding Xuexiang, who are members of the Standing Committee of the Political Bureau of the CPC Central Committee, attended the symposium. Entrusted by the CPC Central Committee, Li Qiang briefed the symposium on the economic work in the first half of this year and outlined plans for economic work in the second half.",
    "kind": "para",
    "zp": [
-    8,
-    8
+    7,
+    7
    ],
    "ep": [
-    9,
-    9
+    8,
+    8
    ]
   },
   {
    "idx": 5,
-   "zh": "同志们、朋友们！",
-   "en": "Comrades and friends,",
+   "zh": "在认真听取大家发言后，习近平发表重要讲话。他指出，今年上半年，在中共中央坚强领导下，各地区各部门积极作为、攻坚克难，加紧实施更加积极有为的宏观政策，我国经济运行稳中有进，社会大局保持稳定。这反映出我国经济基础稳、优势多、韧性强、潜力大，支撑高质量发展的积极因素在不断积累。",
+   "en": "Those who spoke at the symposium were Zheng Jianbang, chairperson of the Central Committee of the Revolutionary Committee of the Chinese Kuomintang; Ding Zhongli, chairperson of the Central Committee of the China Democratic League; Hao Mingjin, chairperson of the Central Committee of the China National Democratic Construction Association; Cai Dafeng, chairperson of the Central Committee of the China Association for Promoting Democracy; He Wei, chairperson of the Central Committee of the Chinese Peasants and Workers Democratic Party; Jiang Zuojun, chairperson of the Central Committee of the China Zhi Gong Party; Wu Weihua, chairperson of the Central Committee of the Jiusan Society; Su Hui, chairperson of the Central Committee of the Taiwan Democratic Self-Government League; Gao Yunlong, chairperson of the ACFIC; and Sun Qixin, a representative of personages without party affiliation. They fully agreed with the CPC Central Committee's analysis and judgement on the current economic situation and its planning and considerations about the economic work in the second half of the year. They put forward opinions and suggestions on a number of issues, including promoting inter-regional collaboration on sci-tech and industrial innovation, facilitating the integrated development of culture, sports, tourism and business sectors, boosting consumption in services sector, making forward-looking planning for future industries, speeding up the establishment of a unified national data market, advancing high-quality urban renewal, further stimulating the vitality of private enterprises, as well as improving social security for people in flexible employment.",
    "kind": "para",
    "zp": [
-    10,
-    10
+    9,
+    9
    ],
    "ep": [
-    11,
-    11
+    10,
+    10
    ]
   },
   {
    "idx": 6,
-   "zh": "中国人民抗日战争是艰苦卓绝的伟大战争。在中国共产党倡导建立的抗日民族统一战线旗帜下，中国人民以铮铮铁骨战强敌、以血肉之躯筑长城，取得近代以来反抗外敌入侵的第一次完全胜利。",
-   "en": "The Chinese People’s War of Resistance Against Japanese Aggression was a great war fought with tenacity and valor. Under the banner of the national united front against Japanese aggression established at the initiative of the Communist Party of China, the Chinese people stood up to fight the formidable enemy with an iron will, formed a great wall with flesh and blood to defend the nation, and ultimately achieved the first complete victory in resisting foreign aggression in modern times.",
+   "zh": "习近平强调，当前我国经济运行依然面临不少风险挑战，要正确把握形势，增强忧患意识，坚持底线思维，用好发展机遇、潜力和优势，巩固拓展经济回升向好势头。下半年，要在宏观政策上持续发力、适时加力，重点做好全方位扩大内需、坚定不移深化改革扩大开放、推动科技创新和产业创新深度融合发展、持续防范化解重点领域风险、多措并举保障改善民生等工作。",
+   "en": "After listening to their remarks attentively, Xi said that in the first half of this year, under the strong leadership of the CPC Central Committee, all regions and departments had actively responded to challenges and accelerated the implementation of more proactive and effective macro policies. As a result, China achieved steady progress in economy while maintaining overall social stability, demonstrating its solid economic foundation, multiple advantages, strong resilience, great potential, and continuous accumulation of positive factors supporting high-quality development.",
    "kind": "para",
    "zp": [
-    12,
-    12
+    11,
+    11
    ],
    "ep": [
-    13,
-    13
+    12,
+    12
    ]
   },
   {
    "idx": 7,
-   "zh": "中国人民抗日战争是世界反法西斯战争的重要组成部分，中国人民以巨大的民族牺牲，为拯救人类文明、保卫世界和平作出了重大贡献。",
-   "en": "The Chinese People’s War of Resistance Against Japanese Aggression was an important part of the World Anti-Fascist War. With huge national sacrifice, the Chinese people made major contributions to saving human civilization and safeguarding world peace.",
+   "zh": "习近平指出，上半年，各民主党派中央、全国工商联和无党派人士紧扣中共中央重大决策部署，聚焦经济社会发展中的一些重点难点问题深入调研、建言献策，积极开展民主监督，体现了在中国共产党领导下团结合作的政治担当和实干精神。他代表中共中央向大家表示衷心感谢。",
+   "en": "At present, China's economic operation still faces many risks and challenges, Xi said, stressing the need to accurately assess the situation, stay vigilant against potential dangers, be prepared for worst-case scenarios, make full use of development opportunities, potential and advantages, as well as consolidate and expand the momentum of economic recovery. In the second half of the year, macro policies should maintain their strength and be intensified when necessary, Xi said, emphasizing efforts to expand domestic demand on all fronts, resolutely deepen reform and opening up, promote the in-depth integration and development of sci-tech and industrial innovation, continue to prevent and defuse risks in key sectors, and take multiple measures to ensure and improve people's well-being.",
    "kind": "para",
    "zp": [
-    14,
-    14
+    13,
+    13
    ],
    "ep": [
-    15,
-    15
+    14,
+    14
    ]
   },
   {
    "idx": 8,
-   "zh": "历史警示我们，人类命运休戚与共，各个国家、各个民族只有平等相待、和睦相处、守望相助，才能维护共同安全，消弭战争根源，不让历史悲剧重演！",
-   "en": "History cautions us that humanity rises and falls together. Only when all countries and nations treat each other as equals, coexist in peace and support each other, can we uphold common security, eradicate the root cause of war, and prevent the recurrence of historical tragedies.",
+   "zh": "习近平对各民主党派、全国工商联和无党派人士提出两点希望。一是统一思想认识，凝聚广泛共识。深刻理解把握中共中央关于当前经济形势的分析判断和经济工作的指导思想、大政方针、重要部署，多做宣传政策、解疑释惑、理顺情绪、凝聚共识的工作，汇聚起团结奋斗的强大正能量。二是立足自身优势，推动高质量发展。结合履职选准调研题目，统筹用好各类资源和专业智库，提出更多具有前瞻性、操作性的意见建议。全国工商联要引导民营经济人士坚守主业、做强实业，坚定不移走高质量发展之路。",
+   "en": "Xi pointed out that in the first half of the year, the central committees of the non-CPC political parties, the ACFIC and personages without party affiliation had aligned their thinking with the CPC Central Committee's major decisions and arrangements, carried out in-depth research with a focus on key and difficult issues arising in economic and social development, offered suggestions and proposals, and actively conducted democratic oversight, demonstrating their sense of political responsibilities and readiness to get down to work for solidarity and cooperation under the leadership of the CPC. Xi expressed heartfelt thanks to all on behalf of the CPC Central Committee.",
    "kind": "para",
    "zp": [
-    16,
-    16
+    15,
+    15
    ],
    "ep": [
-    17,
-    17
+    16,
+    16
    ]
   },
   {
    "idx": 9,
-   "zh": "同志们、朋友们！",
-   "en": "Comrades and friends,",
+   "zh": "刘国中、李干杰、何立峰、张国清、吴政隆，中共中央、国务院有关部门负责人出席座谈会。",
+   "en": "Xi put forward two-point expectations for the non-CPC political parties, the ACFIC, and personages without party affiliation. First, they should forge broad consensus in thinking. They should gain a keen understanding of the CPC Central Committee's analysis and assessment of the current economic situation, along with its guiding principles, key policies and major decisions on economic work. They should intensify efforts to explain policies, dispel concerns and doubts, address public sentiments and foster consensus, thereby generating strong, positive momentum for united efforts for progress. Second, they should leverage their unique advantages to promote high-quality development. This involves selecting investigation and study topics relevant to fulfilling their duties, making coordinated and effective use of various resources and think tanks, and offering more forward-looking, practical opinions and suggestions. The ACFIC, in particular, should guide those engaged in the private economy to stay focused on their core businesses, strengthen the real economy, and remain firmly committed to the path of high-quality development.",
    "kind": "para",
    "zp": [
-    18,
-    18
+    17,
+    17
    ],
    "ep": [
-    19,
-    19
+    18,
+    18
    ]
   },
   {
    "idx": 10,
-   "zh": "中华民族是不畏强暴、自立自强的伟大民族。当年，面对正义与邪恶、光明与黑暗、进步与反动的生死较量，中国人民同仇敌忾、奋起反抗，为国家生存而战，为民族复兴而战，为人类正义而战。今天，人类又面临和平还是战争、对话还是对抗、共赢还是零和的抉择。中国人民坚定站在历史正确一边、站在人类文明进步一边，坚持走和平发展道路，与各国人民携手构建人类命运共同体。",
-   "en": "The Chinese nation is a great nation that is never intimidated by any bullies and always values independence and forges ahead. In the past, when faced with critical struggles between good and evil, light and darkness, progress and reaction, the Chinese people rallied together to defy the enemy. They fought for the survival of the country, for the rejuvenation of the Chinese nation, and for justice of the whole humanity. Today, humanity again has to choose between peace and war, dialogue and confrontation, win-win cooperation and zero-sum game. The Chinese people firmly stand on the right side of history and the progress of human civilization. We will remain committed to the path of peaceful development, and join hands with all peoples around the world in building a community with a shared future for humanity.",
+   "zh": "出席座谈会的党外人士还有邵鸿、何报翔、王光谦、秦博勇、朱永新、杨震和张恩迪、方光华、周黎安等。（完）",
+   "en": "Liu Guozhong, Li Ganjie, He Lifeng, Zhang Guoqing, Wu Zhenglong, and leading officials of relevant departments of the CPC Central Committee and the State Council attended the symposium.",
    "kind": "para",
    "zp": [
+    19,
+    19
+   ],
+   "ep": [
     20,
     20
-   ],
-   "ep": [
-    21,
-    21
-   ]
-  },
-  {
-   "idx": 11,
-   "zh": "中国人民解放军始终是党和人民完全可以信赖的英雄部队。全军将士要忠实履行神圣职责，加快建设世界一流军队，坚决维护国家主权、统一、领土完整，为实现中华民族伟大复兴提供战略支撑，为世界和平与发展作出更大贡献！",
-   "en": "The Chinese People’s Liberation Army has been, and will always be, the heroic armed forces that the Party and the people can fully trust and rely on. All service members should faithfully perform their sacred duty, speed up the building of a world-class military, and firmly safeguard China’s sovereignty, unity and territorial integrity. All service members should provide strategic support for the great rejuvenation of the Chinese nation and make greater contributions to the peace and development of the world.",
-   "kind": "para",
-   "zp": [
-    22,
-    22
-   ],
-   "ep": [
-    23,
-    23
-   ]
-  },
-  {
-   "idx": 12,
-   "zh": "历史承载过去，也启迪未来。新时代新征程，全国各族人民要在中国共产党坚强领导下，坚持马克思列宁主义、毛泽东思想、邓小平理论、“三个代表”重要思想、科学发展观，全面贯彻新时代中国特色社会主义思想，坚定不移走中国特色社会主义道路，传承和弘扬伟大抗战精神，踔厉奋发、勇毅前行，为以中国式现代化全面推进强国建设、民族复兴伟业而团结奋斗！",
-   "en": "History carries the legacy of the past and inspires the future. On the new journey in the new era, the Chinese people of all ethnic groups should, under the strong leadership of the Communist Party of China, follow Marxism-Leninism, Mao Zedong Thought, Deng Xiaoping Theory, the Theory of Three Represents and the Scientific Outlook on Development, and fully implement the Thought on Socialism with Chinese Characteristics for the New Era. We should stay firmly on the path of socialism with Chinese characteristics, and carry forward the great spirit of the War of Resistance. We should press ahead with enterprise and resolve, and advance in unity the cause of building China into a great country on all fronts and realizing great national rejuvenation through Chinese modernization.",
-   "kind": "para",
-   "zp": [
-    24,
-    24
-   ],
-   "ep": [
-    25,
-    25
-   ]
-  },
-  {
-   "idx": 13,
-   "zh": "中华民族伟大复兴势不可挡！人类和平与发展的崇高事业必将胜利！",
-   "en": "The great rejuvenation of the Chinese nation is irresistible! The noble cause of peace and development of humanity will prevail!",
-   "kind": "para",
-   "zp": [
-    26,
-    26
-   ],
-   "ep": [
-    27,
-    27
    ]
   }
  ]
