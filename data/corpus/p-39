@@ -2,8 +2,8 @@
  "units": [
   {
    "idx": 1,
-   "zh": "习近平同美国总统特朗普在釜山举行会晤",
-   "en": "President Xi Jinping Meets with U.S. President Donald J. Trump in Busan",
+   "zh": "共建普惠包容的开放型亚太经济",
+   "en": "Building an Inclusive Open Asia-Pacific Economy for All",
    "kind": "para",
    "zp": [
     1,
@@ -16,106 +16,92 @@
   },
   {
    "idx": 2,
-   "zh": "当地时间2025年10月30日，国家主席习近平在釜山同美国总统特朗普举行会晤。",
-   "en": "On October 30, 2025 local time, President Xi Jinping had a meeting with U.S. President Donald J. Trump in Busan.",
+   "zh": "——在亚太经合组织第三十二次领导人非正式会议第一阶段会议上的讲话 中华人民共和国主席 习近平",
+   "en": "Remarks by H.E. Xi Jinping President of the People’s Republic of China At Session I of the 32nd APEC Economic Leaders’ Meeting",
    "kind": "para",
    "zp": [
     4,
-    4
-   ],
-   "ep": [
-    5,
     5
-   ]
-  },
-  {
-   "idx": 3,
-   "zh": "习近平指出，中美关系在我们共同引领下，保持总体稳定。两国做伙伴、做朋友，这是历史的启示，也是现实的需要。两国国情不同，难免有一些分歧，作为世界前两大经济体，时而也会有摩擦，这很正常。面对风浪和挑战，两国元首作为掌舵人，应当把握好方向、驾驭住大局，让中美关系这艘大船平稳前行。我愿继续同特朗普总统一道，为中美关系打下一个稳固的基础，也为两国各自发展营造良好的环境。",
-   "en": "President Xi noted that under our joint guidance, China-U.S. relations have remained stable on the whole. China and the United States should be partners and friends. This is what history has taught us and what reality needs. Given our different national conditions, we do not always see eye to eye with each other and it is normal for the two leading economies of the world to have frictions now and then. You and I are at the helm of China-U.S. relations. In the face of winds, waves and challenges, we should stay the right course, navigate through the complex landscape, and ensure the steady sailing forward of the giant ship of China-U.S. relations. I am ready to continue working with you to build a solid foundation for China-U.S. relations and create a sound atmosphere for the development of both countries.",
-   "kind": "para",
-   "zp": [
-    7,
-    7
    ],
    "ep": [
-    8,
+    6,
     8
    ]
   },
   {
-   "idx": 4,
-   "zh": "习近平强调，中国经济发展势头不错，今年前三季度增长率达5.2%，对全球的货物贸易进出口增长4%，这是克服内外困难实现的，来之不易。中国经济是一片大海，规模、韧性、潜力都比较大，我们有信心也有能力应对各种风险挑战。",
-   "en": "President Xi emphasized that there is a good momentum in China’s economic development. In the first three quarters of this year, China’s economy increased by 5.2 percent, and import and export trade in goods with the rest of the world expanded by 4 percent. This is not an easy accomplishment given the domestic and external difficulties. The Chinese economy is like a vast ocean, big, resilient and promising. We have the confidence and capability to navigate all kinds of risks and challenges.",
+   "idx": 3,
+   "zh": "（2025年10月31日，庆州）",
+   "en": "Gyeongju, October 31, 2025",
    "kind": "para",
    "zp": [
-    11,
-    11
+    10,
+    10
    ],
    "ep": [
-    12,
-    12
+    11,
+    11
+   ]
+  },
+  {
+   "idx": 4,
+   "zh": "尊敬的李在明总统， 各位同事：",
+   "en": "Your Excellency President Lee Jae Myung, Colleagues,",
+   "kind": "para",
+   "zp": [
+    14,
+    15
+   ],
+   "ep": [
+    16,
+    17
    ]
   },
   {
    "idx": 5,
-   "zh": "中共二十届四中全会审议通过了未来5年的国民经济和社会发展规划建议。70多年来，我们坚持一张蓝图绘到底，一茬接着一茬干，从来没有想挑战谁、取代谁，而是集中精力办好自己的事，做更好的自己，同世界各国分享发展机遇。这是中国成功的重要密码。中国将进一步全面深化改革、扩大对外开放，着力推动经济实现质的有效提升和量的合理增长，推进人的全面发展和全体人民共同富裕，相信这也将为中美合作开辟更广阔空间。",
-   "en": "At its fourth plenary session, the 20th CPC Central Committee deliberated over and adopted the recommendations for the economic and social development plan over the next five years. Over the past seven decades and more, we have been working from generation to generation on the same blueprint to make it a reality. We have no intention to challenge or supplant anyone. Our focus has always been on managing China’s own affairs well, improving ourselves, and sharing development opportunities with all countries across the world. And that is an important secret to our success. China will further deepen reform across the board, expand opening up, and promote higher-quality economic growth while achieving an appropriate increase in economic output, and advance well-rounded human development and common prosperity for all. This will also expand the space for cooperation between China and the United States.",
+   "zh": "很高兴来到韩国历史文化名城庆州，同大家共谋亚太发展大计。感谢李在明总统和韩国政府的周到安排。",
+   "en": "It is my great pleasure to be here in Gyeongju, a city of rich history and culture, to join you in discussing the future of the Asia-Pacific. Let me begin by thanking President Lee Jae Myung and the ROK government for the thoughtful arrangement.",
    "kind": "para",
    "zp": [
-    14,
-    14
+    19,
+    19
    ],
    "ep": [
-    15,
-    15
+    20,
+    20
    ]
   },
   {
    "idx": 6,
-   "zh": "习近平指出，两国经贸团队就重要经贸问题深入交换意见，形成了解决问题的共识。双方团队要尽快细化和敲定后续工作，将共识维护好、落实好，以实实在在的成果，给中美两国和世界经济吃下一颗“定心丸”。中美经贸关系近期经历曲折，也给双方带来一些启示。经贸应该继续成为中美关系的压舱石和推进器，而不是绊脚石和冲突点。双方应该算大账，多看合作带来的长远利益，而不应陷入相互报复的恶性循环。双方团队可以继续本着平等、尊重、互惠的原则谈下去，不断压缩问题清单，拉长合作清单。",
-   "en": "President Xi noted that the two teams had an in-depth exchange of views on important economic and trade issues, and reached consensus on solving various issues. They should work out and finalize the follow-up steps as soon as possible, and ensure that the common understandings are effectively upheld and implemented, to inject confidence into the two countries as well as the global economy through solid deliverables. China-U.S. economic and trade relations have experienced ups and downs recently, and this has also given the two sides some insights. The business relationship should continue to serve as the anchor and driving force for China-U.S. relations, not a stumbling block or a point of friction. The two sides should think big and recognize the long-term benefit of cooperation, and must not fall into a vicious cycle of mutual retaliation. The two teams can continue their talks in the spirit of equality, mutual respect and mutual benefit, and continuously shorten the list of problems and lengthen the list of cooperation.",
+   "zh": "亚太经合组织成立30多年来，从勾画亚太自由贸易区蓝图到推动建设亚太共同体，引领亚太地区走在全球开放发展前列，助力亚太成为全球经济最具活力的地区。",
+   "en": "Over the past 30-plus years since its founding, from drafting the blueprint of the Free Trade Area of the Asia-Pacific (FTAAP) to advancing the vision of an Asia-Pacific community, APEC has been spearheading the region’s rise to the forefront of global open development, and has made the Asia-Pacific the most dynamic part of the global economy.",
    "kind": "para",
    "zp": [
-    17,
-    17
+    22,
+    22
    ],
    "ep": [
-    18,
-    18
+    23,
+    23
    ]
   },
   {
    "idx": 7,
-   "zh": "习近平强调，对话比对抗好。中美之间各渠道各层级应该保持沟通，增进了解。两国在打击非法移民和电信诈骗、反洗钱、人工智能、应对传染疾病等领域合作前景良好，对口部门应该加强对话交流，开展互利合作。中美在地区和国际舞台也应该良性互动。当今世界还有很多难题，中国和美国可以共同展现大国担当，携手多办一些有利于两国和世界的大事、实事、好事。",
-   "en": "President Xi stressed that dialogue is better than confrontation. China and the U.S. should maintain communication through various channels and at various levels to enhance mutual understanding. There is good potential for the two countries to work together on combating illegal immigration and telecom fraud, anti-money laundering, artificial intelligence, and responding to infectious diseases. The competent departments should strengthen dialogue and exchanges and carry out mutually beneficial cooperation. China and the U.S. should also engage in positive interactions on regional and international platforms. The world today is confronted with many tough problems. China and the United States can jointly shoulder our responsibility as major countries, and work together to accomplish more great and concrete things for the good of our two countries and the whole world.",
+   "zh": "当前，世界百年变局加速演进，国际形势变乱交织，亚太地区发展面临的不稳定不确定因素增多。越是风高浪急，越要同舟共济。我们要坚守亚太经合组织促进经济增长、增进人民福祉的初衷，坚持在开放发展中分享机遇、实现共赢，推进普惠包容的经济全球化，构建亚太共同体。为此，我提5点建议。",
+   "en": "Currently, changes unseen in a century are accelerating across the world. The international situation is fluid and turbulent. The Asia-Pacific faces growing uncertainties and destablizing factors in its development. The rougher the seas, the more we must pull together. We should stay true to APEC’s founding mission to promote economic growth and improve people’s lives, and champion open development where everyone shares opportunities and emerges a winner. We should promote a universally beneficial and inclusive economic globalization, and build an Asia-Pacific community. To this end, I wish to make five proposals.",
    "kind": "para",
    "zp": [
-    20,
-    20
+    25,
+    25
    ],
    "ep": [
-    21,
-    21
+    26,
+    26
    ]
   },
   {
    "idx": 8,
-   "zh": "明年，中国将担任亚太经合组织东道主，美国将主办二十国集团峰会。双方可以相互支持，争取两场峰会都取得积极成果，为促进世界经济增长、完善全球经济治理作出贡献。",
-   "en": "China will host APEC 2026, and the U.S. the G20 summit next year. The two sides can support each other in making both summits productive to promote world economic growth and improve global economic governance.",
-   "kind": "para",
-   "zp": [
-    23,
-    23
-   ],
-   "ep": [
-    24,
-    24
-   ]
-  },
-  {
-   "idx": 9,
-   "zh": "特朗普表示，很荣幸同习近平主席会面。中国是伟大国家，习主席是受人尊敬的伟大领导人，也是我多年的好朋友，我们相处非常愉快。美中关系一直很好，将来会更好，希望中国和美国的未来都更加美好。中国是美国最大的伙伴，两国携手可以在世界上做成很多大事，未来美中合作会取得更大成就。中国将举办2026年亚太经合组织领导人非正式会议，美国将举办二十国集团峰会，乐见双方取得成功。",
-   "en": "President Trump said that it is a great honor to meet President Xi. China is a great country. President Xi is a well respected great leader, and has been my good friend for many years. We have always got along well. The United States and China have always had a fantastic relationship, and it will be even better. We will make both China and the U.S. even better. China is the biggest partner of the U.S. Together, our two countries can get many great things done for the world and have many years of success. China will host APEC 2026, and the U.S. will host the G20 summit next year. We expect both to be successful.",
+   "zh": "一是共同维护多边贸易体制。践行真正的多边主义，提高以世界贸易组织为核心的多边贸易体制的权威性和有效性。坚持世界贸易组织改革的正确方向，维护最惠国待遇、非歧视等基本原则，推动国际经贸规则与时俱进，更好保障发展中国家正当权益。",
+   "en": "First, we should work together to safeguard the multilateral trading system. We must practice true multilateralism, and enhance the authority and effectiveness of the multilateral trading system with the WTO at its core. We should stick to the right direction of WTO reform, uphold the most-favored-nation (MFN), nondiscrimination and other fundamental principles, and update international economic and trade rules to reflect the changing times, so as to better protect the legitimate rights and interests of developing countries.",
    "kind": "para",
    "zp": [
     28,
@@ -127,9 +113,9 @@
    ]
   },
   {
-   "idx": 10,
-   "zh": "两国元首同意加强双方在经贸、能源等领域合作，促进人文交流。",
-   "en": "The two presidents agreed to enhance cooperation in economic, trade, energy and other fields and to encourage more people-to-people exchanges.",
+   "idx": 9,
+   "zh": "二是共同营造开放型区域经济环境。持续推进贸易和投资自由化便利化，深化财金领域合作，稳步推进区域经济一体化进程。把握《区域全面经济伙伴关系协定》高质量实施和《全面与进步跨太平洋伙伴关系协定》扩员契机，推动彼此对接、融合共进，为亚太自由贸易区建设聚势汇能。",
+   "en": "Second, we should work together to build an open economic environment in the region. We should keep promoting trade and investment liberalization and facilitation, deepen fiscal and financial cooperation, and steadily push for regional economic integration. With the RCEP being implemented to high standards and the CPTPP membership expanding, we should help the two align with each other and progress together so as to inject impetus into the development of the FTAAP.",
    "kind": "para",
    "zp": [
     31,
@@ -141,9 +127,9 @@
    ]
   },
   {
-   "idx": 11,
-   "zh": "两国元首同意保持经常性交往。特朗普期待明年早些时候访华，邀请习近平主席访问美国。",
-   "en": "The two presidents agreed to maintain interactions on a regular basis. President Trump looked forward to visiting China early next year, and invited President Xi to visit the United States.",
+   "idx": 10,
+   "zh": "三是共同维护产业链供应链稳定畅通。坚持“拉手”而不是“松手”、“延链”而不是“断链”，积极寻找更多利益契合点，支持供应链开放发展。以《亚太经合组织互联互通蓝图》实施10周年为契机，不断做实做细硬联通、软联通、心联通，进一步夯实亚太地区开放发展基础。",
+   "en": "Third, we should work together to keep industrial and supply chains stable and smooth. We must join hands rather than part ways, and strengthen our links rather than sever them. We should vigorously expand our common interests, and support the open development of supply chains. The tenth anniversary of the APEC Connectivity Blueprint gives us a good opportunity to strive for concrete and tangible results in physical, institutional and people-to-people connectivity so as to further consolidate the foundations for open development in our region.",
    "kind": "para",
    "zp": [
     34,
@@ -155,9 +141,9 @@
    ]
   },
   {
-   "idx": 12,
-   "zh": "蔡奇、王毅、何立峰等参加会见。",
-   "en": "Cai Qi, Wang Yi, and He Lifeng, among others, attended the meeting.",
+   "idx": 11,
+   "zh": "四是共同推进贸易数字化绿色化。充分发挥数字技术对跨境贸易的促进作用，推进无纸贸易、智慧海关等务实合作。破除各种绿色壁垒，拓展绿色产业、清洁能源和绿色矿产合作。中方在亚太经合组织首倡设立的亚太示范电子口岸网络、绿色供应链网络，已经成为区域贸易数字化绿色化合作的重要平台。",
+   "en": "Fourth, we should work together to advance the digital and green transformation of trade. We should make digital technologies a strong catalyst for cross-border trade, and promote practical cooperation in paperless trade, smart customs and other areas. We must remove various green barriers, and expand cooperation in green industries, clean energy and green minerals. The Asia-Pacific Model E-port Network and the Cooperation Network on Green Supply Chain initiated by China under APEC have become important platforms for regional cooperation on the digital and green upgrades for trade.",
    "kind": "para",
    "zp": [
     37,
@@ -166,6 +152,76 @@
    "ep": [
     38,
     38
+   ]
+  },
+  {
+   "idx": 12,
+   "zh": "五是共同促进普惠包容发展。坚持以人民为中心的发展理念，着力解决发展不平衡问题，推动经济全球化更加包容、更可持续，更好惠及地区全体人民。中方同各方合作推进高质量共建“一带一路”，支持更多发展中国家实现现代化，为全球发展开辟新空间。中国已给予同我国建交的最不发达国家100%税目产品零关税待遇，愿通过商签共同发展经济伙伴关系协定落实对非洲建交国实施100%税目产品零关税措施，致力于同各国共同发展、共享繁荣。",
+   "en": "Fifth, we should work together to promote universally beneficial and inclusive development. We should adhere to the people-centered development philosophy, focus on imbalances in development, and foster an economic globalization that is more inclusive, sustainable, and beneficial to all peoples in the region. China is working with various parties to promote the high-quality development of the Belt and Road Initiative, and supports the modernization drive of more developing countries, which will help open up new space for global development. We have given zero-tariff treatment on 100 percent tariff lines from the least developed countries having diplomatic relations with China, and stand ready to extend the same treatment to all African countries having diplomatic relations with China through the signing of agreements on economic partnership for shared development. We will continue to strive for common development and shared prosperity with all nations.",
+   "kind": "para",
+   "zp": [
+    40,
+    40
+   ],
+   "ep": [
+    41,
+    41
+   ]
+  },
+  {
+   "idx": 13,
+   "zh": "各位同事！",
+   "en": "Colleagues,",
+   "kind": "para",
+   "zp": [
+    43,
+    43
+   ],
+   "ep": [
+    44,
+    44
+   ]
+  },
+  {
+   "idx": 14,
+   "zh": "中国始终坚持对外开放的基本国策，以实际行动推动建设开放型世界经济。过去5年，中国货物和服务贸易规模位居全球第一和第二，累计吸引外资逾7000亿美元，对外投资年均增速超过5%。中国的外资准入负面清单持续缩减，单方面免签持续扩容，自主开放和单边开放有序扩大，22个自贸试验区主动对接国际高标准经贸规则。中国对外开放的大门不会关闭，只会越开越大。",
+   "en": "China always pursues the basic state policy of opening up, and has taken real steps to promote an open world economy. Over the past five years, China has ranked as the world’s largest trader in goods and the second largest in services. It has attracted more than US$700 billion in foreign investment in total, and its outbound investment has been increasing by over five percent on annual average. We have been shortening the negative list for foreign investment, and applying the unilateral visa-free policy to more countries. We are steadily expanding voluntary and unilateral opening up, and have actively aligned with high-standard international economic and trade rules through our 22 pilot free trade zones. China’s door to the world will not close; it will only open wider and wider.",
+   "kind": "para",
+   "zp": [
+    46,
+    46
+   ],
+   "ep": [
+    47,
+    47
+   ]
+  },
+  {
+   "idx": 15,
+   "zh": "不久前，中共二十届四中全会通过了关于制定“十五五”规划的建议。中方将以此为契机，进一步全面深化改革，坚定不移扩大高水平对外开放，不断以中国式现代化新成就为亚太和世界提供新机遇。",
+   "en": "A few days ago, the Recommendations for Formulating the 15th Five-Year Plan were adopted at the fourth plenary session of the 20th Central Committee of the Communist Party of China. We will take this opportunity to further deepen reform comprehensively and expand high-standard opening up, and create new opportunities for the Asia-Pacific and the world through the latest achievements of Chinese modernization.",
+   "kind": "para",
+   "zp": [
+    49,
+    49
+   ],
+   "ep": [
+    50,
+    50
+   ]
+  },
+  {
+   "idx": 16,
+   "zh": "谢谢大家！",
+   "en": "Thank you.",
+   "kind": "para",
+   "zp": [
+    52,
+    52
+   ],
+   "ep": [
+    53,
+    53
    ]
   }
  ]
