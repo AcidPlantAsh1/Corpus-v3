@@ -622,7 +622,13 @@ function loadCorpus(){
 }
 function saveCorpus(){
 
-  const slim=corpus.map(f=>({name:f.name,folder:f.folder||'',origin:f.origin||'docx',urls:f.urls||{},importedAt:f.importedAt||null,units:f.units.map(u=>({file:u.file,idx:u.idx,zh:u.zh,en:u.en,zp:u.zp,ep:u.ep,ai:u.ai,kind:u.kind,weak:u.weak,loose:u.loose}))}));
+  const slim=corpus.map(f=>({name:f.name,folder:f.folder||'',origin:f.origin||'docx',urls:f.urls||{},importedAt:f.importedAt||null,units:f.units.map(u=>{
+  const o={file:u.file,idx:u.idx,zh:u.zh,en:u.en,zp:u.zp,ep:u.ep,kind:u.kind};
+  if(u.ai&&u.ai.length) o.ai=u.ai;
+  if(u.weak) o.weak=true;
+  if(u.loose) o.loose=true;
+  return o;
+})}));
   const ok=S.set(K_CORPUS,JSON.stringify(slim));
   if(!ok&&$('pairHint')) $('pairHint').textContent='localStorage 已满或被禁用，已改用 IndexedDB 保存。';
   syncAll();
@@ -2760,15 +2766,43 @@ async function ghFetch(path,opt){
   if(!r.ok){ let t=''; try{ t=await r.text(); }catch(e){} throw new Error('GitHub '+r.status+' '+String(t).slice(0,200)); }
   return r.json();
 }
+function safeParse(txt){
+  if(!txt||!String(txt).trim()) return null;
+  try{ return JSON.parse(txt); }catch(e){ return null; }
+}
+/* 大文件读取：GitHub 对 >1MB 的文件在 contents 接口里返回空内容（encoding:"none"），
+   必须改用 raw 媒体类型取原文，否则 JSON.parse('') 会报 Unexpected end of JSON input */
+async function ghReadRaw(path){
+  const ref=share.branch?('?ref='+encodeURIComponent(share.branch)):'';
+  const url='https://api.github.com/repos/'+encodeURIComponent(share.owner)+'/'+encodeURIComponent(share.repo)+'/contents/'+path+ref;
+  const r=await fetch(url,{
+    headers:{'Authorization':AUTH_PREFIX+share.token,'Accept':'application/vnd.github.raw','X-GitHub-Api-Version':'2022-11-28'},
+    cache:'no-store'
+  });
+  if(!r.ok) return null;
+  return safeParse(await r.text());
+}
 async function ghRead(path){
   try{
     const ref=share.branch?('?ref='+encodeURIComponent(share.branch)):'';
     const j=await ghFetch(path+ref);
-    return {sha:j.sha,data:JSON.parse(b64dec(j.content))};
+    let data=null;
+    if(j&&j.encoding!=='none'&&j.content){
+      const txt=b64dec(j.content);
+      data=safeParse(txt);
+    }
+    if(data===null) data=await ghReadRaw(path);   // 空内容 / 超 1MB / 解析失败 → 取原文
+    return {sha:(j&&j.sha)||null,data:data};
   }catch(e){
-    if(e.message.indexOf('404')>=0) return {sha:null,data:null};
+    if(String(e.message).indexOf('404')>=0) return {sha:null,data:null};
     throw e;
   }
+}
+/* 只取版本号（大文件无需解析内容，避免同一问题复发） */
+async function ghShaOf(path){
+  const ref=share.branch?('?ref='+encodeURIComponent(share.branch)):'';
+  try{ const j=await ghFetch(path+ref); return (j&&j.sha)||null; }
+  catch(e){ if(String(e.message).indexOf('404')>=0) return null; throw e; }
 }
 let ghQueue=Promise.resolve();
 function ghWrite(path,obj,msg){
@@ -2778,10 +2812,10 @@ function ghWrite(path,obj,msg){
   return job;
 }
 async function ghWriteRetry(path,obj,msg,attempt){
-  const cur=await ghRead(path);
+  const sha=await ghShaOf(path);
   const body={message:msg||('update '+path),content:b64enc(JSON.stringify(obj,null,1))};
   if(share.branch) body.branch=share.branch;
-  if(cur.sha) body.sha=cur.sha;
+  if(sha) body.sha=sha;
   try{
     await ghFetch(path,{method:'PUT',body:JSON.stringify(body)});
     return true;
@@ -2820,6 +2854,10 @@ function renderRepoSummary(){
     L.appendChild(d);
   });
   if(corpus.length>3){ L.appendChild(el('div','hint','等共 '+corpus.length+' 个文件')); }
+  try{
+    const kb=Math.round(JSON.stringify(corpusSnapshot()).length/1024);
+    if(kb>900){ L.appendChild(el('div','hint','当前语料约 '+kb+' KB，已接近单文件上限（约 1MB），建议精简或拆分文件')); }
+  }catch(e){}
 }
 async function refreshFromRepo(){
   const st=$('refreshStat');
