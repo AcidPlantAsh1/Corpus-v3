@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>中英对照术语查询器</title>
+<title>中英对照词汇查询器</title>
 <style>
 /* SECTION: tokens */
 :root{
@@ -762,7 +762,7 @@ function snapshotAll(){
 }
 async function writeDisk(){ return false; }
 function corpusSnapshot(){
-  return {tool:'中英对照术语查询器',version:1,updatedAt:new Date().toISOString(),folders:folders.slice(),
+  return {tool:'中英对照词汇查询器',version:1,updatedAt:new Date().toISOString(),folders:folders.slice(),
     files:corpus.map(f=>({name:f.name,folder:f.folder||'',origin:f.origin||'docx',urls:f.urls||{},importedAt:f.importedAt||null,
       unitCount:f.units.length,
       units:f.units.map(u=>({idx:u.idx,zh:u.zh,en:u.en,zp:u.zp,ep:u.ep,kind:u.kind||'para',weak:!!u.weak,ai:u.ai||null}))}))};
@@ -3086,7 +3086,7 @@ async function bootShared(){
 /* SECTION: csv */
 function csvCell(s){ s=String(s==null?'':s); return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s; }
 function backupLocal(){
-  const payload={tool:'中英对照术语查询器',version:2,exportedAt:new Date().toISOString(),
+  const payload={tool:'中英对照词汇查询器',version:2,exportedAt:new Date().toISOString(),
     folders:folders.slice(),files:corpusSnapshot().files,glossary:glossary};
   const txt=JSON.stringify(payload,null,1);
   const kb=Math.round(txt.length/1024);
@@ -3224,7 +3224,7 @@ function applyMode(){
   const t1=document.querySelector('.brand h1');
   const t2=document.querySelector('.brand .sub');
   if(isC){
-    document.title='添加语料文件 · 中英对照术语查询器';
+    document.title='添加语料文件 · 中英对照词汇查询器';
     if(t1) t1.textContent='添加语料文件';
     if(t2) t2.textContent='导入文件或粘贴中英文全文，对齐后自动同步到仓库，所有访客可见。';
   }else{
