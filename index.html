@@ -30,7 +30,8 @@ button,input,select,textarea{font:inherit;color:inherit}
   position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--line);
   display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding:12px clamp(12px,3vw,26px);
 }
-.brand{display:flex;align-items:baseline;gap:10px;min-width:0;flex:1 1 auto}
+.brand{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;min-width:0;flex:1 1 auto}
+.brand .sub2{flex:0 0 100%;font-size:11.5px;color:var(--mut);line-height:1.4}
 .brand h1{font-size:17px;margin:0;font-weight:700;letter-spacing:.2px;white-space:nowrap}
 .brand .sub{font-size:11.5px;color:var(--gold);line-height:1.45;white-space:normal;max-width:560px}
 .chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -271,15 +272,16 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-r
 <!-- SECTION: header -->
 <header class="top">
   <div class="brand">
-    <h1>中英对照术语查询器</h1>
+    <h1>中英对照词汇查询器</h1>
     <span class="sub">查询是基于词频的概率推断，并非基于语义的精准对应，请结合原文谨慎使用。</span>
+    <div class="sub2">（当前为测试版，版本更新时间为：2026-11-25）</div>
   </div>
   <div class="chips">
     <span class="chip">文件 <b id="cFiles">0</b></span>
     <span class="chip">对照单元 <b id="cUnits">0</b></span>
     <span class="chip">词语表 <b id="cGloss">0</b></span>
     <button class="iconbtn" id="btnSettings" type="button">设置</button>
-    <button class="iconbtn" id="btnTheme" type="button">主题</button>
+    <button class="iconbtn" id="btnTheme" type="button">深色模式</button>
   </div>
 </header>
 
@@ -301,17 +303,14 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-r
     <div class="home-grid">
 <section class="card c-gloss" id="card-gloss">
       <h2>词语表<span class="n" id="gCount">0 条</span></h2>
-      <div class="row" style="margin-top:0">
-        <button class="btn" id="btnOpenGloss" type="button">打开词语表</button>
-      </div>
-      <div class="hint" id="gTip">查询时会先在这里匹配。词条清单、导出与清空都在新标签页里进行。</div>
+      <div class="hint" id="gTip" style="margin-top:0">查询时会先在这里匹配。词条清单、导出与清空都在新标签页里进行。</div>
+      <div class="row"><button class="btn" id="btnOpenGloss" type="button">打开词语表</button></div>
     </section>
 
     <section class="card" id="card-repo">
       <h2>语料文件<span class="n" id="repoCount">0 个</span></h2>
       <div class="repo-mini" id="repoLatest">正在读取…</div>
       <div class="row"><button class="btn" id="btnEditCorpus" type="button">编辑语料库</button></div>
-      <div class="hint" style="margin-top:8px">显示仓库中的语料数量与最新上传的 3 个文件。点「编辑语料库」在新标签页上传或删除。</div>
     </section>
     </div>
 
@@ -2032,6 +2031,49 @@ function buildCorpusAdminPage(){
       headers:{'Authorization':String.fromCharCode(66,101,97,114,101,114)+' '+token,'Accept':'application/vnd.github+json'}
     }).then(function(r){ return r.ok? r.json() : null; }).then(function(j){ return j&&j.sha? j.sha : null; });
   }
+
+  function hdrA(){ return {'Authorization':String.fromCharCode(66,101,97,114,101,114)+' '+token,'Accept':'application/vnd.github+json','Content-Type':'application/json'}; }
+  function apiUrl(path){ return 'https://api.github.com/repos/'+encodeURIComponent(D.owner)+'/'+encodeURIComponent(D.repo)+'/contents/'+path; }
+  function withTimeout(p,ms,label){
+    return Promise.race([p,new Promise(function(_,rej){ setTimeout(function(){ rej(new Error((label||'请求')+'超时（'+Math.round(ms/1000)+'秒）')); },ms); })]);
+  }
+  function b64d(s){ var bin=atob(String(s||'').replace(/[^A-Za-z0-9+/=]/g,'')),b=new Uint8Array(bin.length); for(var i=0;i<bin.length;i++)b[i]=bin.charCodeAt(i); return new TextDecoder().decode(b); }
+  function ghGetJson(path){
+    return withTimeout(fetch(apiUrl(path)+'?ref='+encodeURIComponent(D.branch),{headers:hdrA(),cache:'no-store'}),20000,'读取')
+      .then(function(r){ return r.ok? r.json() : null; })
+      .then(function(j){
+        if(!j||j.encoding==='none'||!j.content) return null;
+        try{ return JSON.parse(b64d(j.content)); }catch(e){ return null; }
+      });
+  }
+  function ghPut(path,obj,msg,tries){
+    tries=tries||0;
+    return withTimeout(fetch(apiUrl(path)+'?ref='+encodeURIComponent(D.branch),{headers:hdrA(),cache:'no-store'}),20000,'查询版本')
+      .then(function(r){ return r.ok? r.json() : null; })
+      .then(function(j){
+        var body={message:msg,content:b64enc(JSON.stringify(obj)),branch:D.branch};
+        if(j&&j.sha) body.sha=j.sha;
+        return withTimeout(fetch(apiUrl(path),{method:'PUT',headers:hdrA(),body:JSON.stringify(body)}),45000,'提交');
+      })
+      .then(function(r){
+        if(r.ok) return true;
+        return r.text().then(function(t){
+          if(r.status===409 && tries<3 && /does not match|conflict/i.test(t)){
+            return new Promise(function(res){ setTimeout(res,600*(tries+1)); }).then(function(){ return ghPut(path,obj,msg,tries+1); });
+          }
+          throw new Error('GitHub '+r.status+' '+String(t).slice(0,160));
+        });
+      });
+  }
+  function ghDel(path,msg){
+    return withTimeout(fetch(apiUrl(path)+'?ref='+encodeURIComponent(D.branch),{headers:hdrA(),cache:'no-store'}),20000,'查询版本')
+      .then(function(r){ return r.ok? r.json() : null; })
+      .then(function(j){
+        if(!j||!j.sha) return false;
+        return withTimeout(fetch(apiUrl(path),{method:'DELETE',headers:hdrA(),body:JSON.stringify({message:msg,sha:j.sha,branch:D.branch})}),20000,'删除').then(function(r){ return r.ok; });
+      }).catch(function(){ return false; });
+  }
+  function squ(u){ var o={idx:u.idx,zh:u.zh,en:u.en,kind:u.kind||'para'}; if(u.zp)o.zp=u.zp; if(u.ep)o.ep=u.ep; if(u.ai&&u.ai.length)o.ai=u.ai; if(u.weak)o.weak=true; if(u.loose)o.loose=true; return o; }
   $('unlock').onclick=function(){
     token=($('tk').value||'').trim();
     if(!token){ $('lstat').textContent='请填入 GitHub 令牌'; return; }
@@ -2040,29 +2082,40 @@ function buildCorpusAdminPage(){
     $('work').hidden=false; $('unlock').disabled=true; render();
   };
   $('save').onclick=function(){
-    if(!token){ alert('请先解锁并填入令牌'); return; }
-    $('stat').textContent='提交中…';
-    function attempt(n){
-      return ghSha('data/corpus.json').then(function(sha){
-        var body={message:'edit corpus '+new Date().toISOString().slice(0,10),content:b64enc(JSON.stringify({updatedAt:new Date().toISOString(),folders:folders,files:files},null,1)),branch:D.branch};
-        if(sha) body.sha=sha;
-        return fetch('https://api.github.com/repos/'+encodeURIComponent(D.owner)+'/'+encodeURIComponent(D.repo)+'/contents/data/corpus.json',{
-          method:'PUT',
-          headers:{'Authorization':String.fromCharCode(66,101,97,114,101,114)+' '+token,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
-          body:JSON.stringify(body)
+    if(!token){ alert('请先填入令牌'); return; }
+    var st=$('stat');
+    st.textContent='准备提交…';
+    var idxPath='data/corpus/index.json';
+    ghGetJson(idxPath).then(function(idx){
+      var remote={}; ((idx&&idx.files)||[]).forEach(function(f){ remote[f.shard]=f; });
+      var localSet={}; var entries=[]; var i=0;
+      function step(){
+        if(i>=files.length) return finish();
+        var f=files[i]; var shard='p-'+String(i+1).padStart(2,'0');
+        localSet[shard]=1;
+        var body={units:(f.units||[]).map(squ)};
+        var len=JSON.stringify(body).length;
+        var prev=remote[shard];
+        var same=prev&&prev.bytes===len&&prev.units===(f.units||[]).length&&prev.name===f.name;
+        entries.push({name:f.name,folder:f.folder||'',origin:f.origin||'',urls:f.urls||{},importedAt:f.importedAt||null,shard:shard,units:(f.units||[]).length,bytes:len});
+        i++;
+        if(same){ st.textContent='检查 '+i+'/'+files.length+'（未改动，跳过）'; return step(); }
+        st.textContent='提交 '+i+'/'+files.length+'：'+String(f.name).slice(0,20)+'…';
+        return ghPut('data/corpus/'+shard,body,'update shard '+shard).then(step);
+      }
+      function finish(){
+        var stale=Object.keys(remote).filter(function(s){ return !localSet[s]; });
+        var p=Promise.resolve();
+        stale.forEach(function(s){ p=p.then(function(){ return ghDel('data/corpus/'+s,'remove '+s); }); });
+        return p.then(function(){
+          st.textContent='更新索引…';
+          return ghPut(idxPath,{updatedAt:new Date().toISOString(),version:2,folders:folders,files:entries},'update corpus index');
+        }).then(function(){
+          st.textContent='已提交 '+entries.length+' 个文件，约 1 分钟后生效';
         });
-      }).then(function(r){
-        if(r.ok){ $('stat').textContent='已提交，约 1 分钟后生效'; return; }
-        return r.text().then(function(t){
-          if(r.status===409 && n<3 && /does not match|conflict/i.test(t)){
-            $('stat').textContent='版本冲突，自动重试第 '+(n+1)+' 次…';
-            return new Promise(function(res){ setTimeout(res,500*(n+1)); }).then(function(){ return attempt(n+1); });
-          }
-          throw new Error('GitHub '+r.status+' '+String(t).slice(0,200));
-        });
-      });
-    }
-    attempt(0).catch(function(e){ $('stat').textContent='提交失败：'+e.message; });
+      }
+      return step();
+    }).catch(function(e){ st.textContent='提交失败：'+e.message; });
   };
 })();
 `;
@@ -2930,10 +2983,10 @@ function renderRepoSummary(){
     d.textContent=(i+1)+'. '+f.name+'（'+f.units.length+' 组'+when+'）';
     L.appendChild(d);
   });
-  if(corpus.length>3){ L.appendChild(el('div','hint','等共 '+corpus.length+' 个文件')); }
   try{
     const kb=Math.round(JSON.stringify(corpusSnapshot()).length/1024);
-    if(kb>900){ L.appendChild(el('div','hint','当前语料约 '+kb+' KB，已按文件分片存储，可正常查询；首次打开加载会稍慢')); }
+    if(corpus.length>3) L.appendChild(el('div','hint','等共 '+corpus.length+' 个文件　·　当前语料约 '+kb+' KB'));
+    else L.appendChild(el('div','hint','当前语料约 '+kb+' KB'));
   }catch(e){}
 }
 async function refreshFromRepo(){
@@ -3175,8 +3228,8 @@ function applyMode(){
     if(t1) t1.textContent='添加语料文件';
     if(t2) t2.textContent='导入文件或粘贴中英文全文，对齐后自动同步到仓库，所有访客可见。';
   }else{
-    document.title='中英对照术语查询器';
-    if(t1) t1.textContent='中英对照术语查询器';
+    document.title='中英对照词汇查询器';
+    if(t1) t1.textContent='中英对照词汇查询器';
     if(t2) t2.textContent='查询是基于词频的概率推断，并非基于语义的精准对应，请结合原文谨慎使用。';
   }
 }
@@ -3289,9 +3342,14 @@ async function init(){
   $('btnTheme').addEventListener('click',()=>{
     const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
     document.documentElement.dataset.theme=next; S.set('cn2en.theme',next);
+    syncThemeBtn();
   });
+  function syncThemeBtn(){
+    const b=$('btnTheme'); if(b) b.textContent=(document.documentElement.dataset.theme==='dark')?'浅色模式':'深色模式';
+  }
   const th=S.get('cn2en.theme'); if(th) document.documentElement.dataset.theme=th;
   else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme='dark';
+  syncThemeBtn();
 
   $('btnOpenGloss').addEventListener('click',openGlossary);
 
