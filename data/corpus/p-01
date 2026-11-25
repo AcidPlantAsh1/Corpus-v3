@@ -1,0 +1,662 @@
+{
+ "units": [
+  {
+   "idx": 1,
+   "zh": "应新加坡副总理颜金勇邀请，中共中央政治局常委、国务院副总理丁薛祥将于11月22日至23日访问新加坡，同颜金勇副总理共同主持中新双边合作联委会第二十二次会议、中新苏州工业园区联合协调理事会第二十七次会议、中新天津生态城联合协调理事会第十八次会议、中新（重庆）战略性互联互通示范项目联合协调理事会第十次会议。",
+   "en": "At the invitation of Deputy Prime Minister of Singapore Gan Kim Yong, Member of the Standing Committee of the Political Bureau of the CPC Central Committee and Vice Premier of the State Council Ding Xuexiang will visit Singapore from November 22 to 23, and co-chair with Deputy Prime Minister Gan Kim Yong the 22nd meeting of the China-Singapore Joint Council for Bilateral Cooperation, the 27th meeting of the China-Singapore Suzhou Industrial Park Joint Steering Council, the 18th meeting of the China-Singapore Tianjin Eco-City Joint Steering Council, and the 10th meeting of the China-Singapore (Chongqing) Demonstration Initiative on Strategic Connectivity Joint Steering Council.",
+   "kind": "sent",
+   "zp": [
+    1,
+    1
+   ],
+   "ep": [
+    1,
+    1
+   ]
+  },
+  {
+   "idx": 2,
+   "zh": "新华社记者：亚太经合组织（APEC）第三十三次领导人非正式会议在深圳成功举行。",
+   "en": "Xinhua News Agency: The 33rd APEC Economic Leaders’ Meeting was successfully held in Shenzhen.",
+   "kind": "sent",
+   "zp": [
+    2,
+    2
+   ],
+   "ep": [
+    2,
+    2
+   ]
+  },
+  {
+   "idx": 3,
+   "zh": "我们注意到，会议就亚太共同体建设提出《深圳展望》，引发国际社会热议。",
+   "en": "We notice that the Shenzhen Outlook on building an Asia-Pacific community put forward at the meeting has sparked heated discussion worldwide.",
+   "kind": "sent",
+   "zp": [
+    3,
+    3
+   ],
+   "ep": [
+    3,
+    3
+   ]
+  },
+  {
+   "idx": 4,
+   "zh": "发言人能否进一步介绍情况？",
+   "en": "Could you share more details on that?",
+   "kind": "sent",
+   "zp": [
+    4,
+    4
+   ],
+   "ep": [
+    4,
+    4
+   ]
+  },
+  {
+   "idx": 5,
+   "zh": "郭嘉昆：11月19日，亚太经合组织第三十三次领导人非正式会议在深圳成功举行。",
+   "en": "Guo Jiakun: On November 19, the 33rd APEC Economic Leaders’ Meeting was successfully held in Shenzhen.",
+   "kind": "sent",
+   "zp": [
+    5,
+    5
+   ],
+   "ep": [
+    5,
+    5
+   ]
+  },
+  {
+   "idx": 6,
+   "zh": "习近平主席主持会议并发表重要讲话，就亚太共同体建设阐述中国主张，宣布中方支持亚太合作的一系列自主举措。",
+   "en": "President Xi Jinping chaired the meeting and delivered important remarks, in which he elaborated on China’s proposals on building an Asia-Pacific community and announced China’s voluntary measures to support Asia-Pacific cooperation.",
+   "kind": "sent",
+   "zp": [
+    6,
+    6
+   ],
+   "ep": [
+    6,
+    6
+   ]
+  },
+  {
+   "idx": 7,
+   "zh": "会议达成富有雄心、务实全面的《亚太经合组织领导人深圳展望》，这是APEC“中国年”最重要的成果，也是APEC合作新的里程碑。",
+   "en": "The meeting adopted the 2026 APEC Leaders’ Shenzhen Outlook—an ambitious, pragmatic and comprehensive document. This is the most important outcome of APEC “China Year,” and marks a new milestone in APEC cooperation.",
+   "kind": "sent",
+   "zp": [
+    7,
+    7
+   ],
+   "ep": [
+    7,
+    8
+   ]
+  },
+  {
+   "idx": 8,
+   "zh": "《深圳展望》聚焦经贸、联通、创新、发展四大领域和亚太自贸区、设施硬联通、规制软联通、人民心联通以及数字经济、新兴技术、能力建设、可持续增长等八大方向，为亚太共同体搭建起“四梁八柱”。",
+   "en": "The Shenzhen Outlook focuses on four major areas “trade and economy, connectivity, innovation, and development,” and eight key aspects “Free Trade Area of the Asia-Pacific, physical connectivity, institutional connectivity, people-to-people connectivity, digital economy, emerging technologies, capacity building, and sustainable growth,” setting up the pillars for building an Asia-Pacific community.",
+   "kind": "sent",
+   "zp": [
+    8,
+    8
+   ],
+   "ep": [
+    9,
+    9
+   ]
+  },
+  {
+   "idx": 9,
+   "zh": "APEC各成员重申，亚太经合组织是区域经济合作的首要平台，将持续推进工作，朝着建成亚太共同体这一目标不断迈进。",
+   "en": "The APEC members reaffirmed their commitment to APEC as the premier forum for regional economic cooperation, and to making continuous efforts to move toward the goal of building an Asia-Pacific community.",
+   "kind": "sent",
+   "zp": [
+    9,
+    9
+   ],
+   "ep": [
+    10,
+    10
+   ]
+  },
+  {
+   "idx": 10,
+   "zh": "APEC各成员还衷心感谢中国作为东道主，以及广东省深圳市的周到安排、深圳市民的热情好客。",
+   "en": "They also extended their sincere appreciation to China, the host country, and the people and city of Shenzhen, Guangdong Province for their warm hospitality and thorough arrangements.",
+   "kind": "sent",
+   "zp": [
+    10,
+    10
+   ],
+   "ep": [
+    11,
+    11
+   ]
+  },
+  {
+   "idx": 11,
+   "zh": "中方将同亚太伙伴一道，践行好深圳会议共识，向着亚太共同体目标坚定前行，为中国人民和亚太人民的福祉作出不懈努力，为世界的和平与发展作出更大贡献。",
+   "en": "China will work with Asia-Pacific partners to implement the common understandings reached at the meeting, work steadily toward the goal of Asia-Pacific community, strive for the wellbeing of the people in China and the Asia-Pacific, and make greater contributions to world peace and development.",
+   "kind": "sent",
+   "zp": [
+    11,
+    11
+   ],
+   "ep": [
+    12,
+    12
+   ]
+  },
+  {
+   "idx": 12,
+   "zh": "朝日新闻记者：日本首相高市早苗昨天在深圳举行的记者会上表示，日本政府在台湾问题上的基本立场与1972年《中日联合声明》一致。",
+   "en": "Asahi Shimbun: Japanese Prime Minister Sanae Takaichi said at a press conference in Shenzhen yesterday that the Japanese government’s position on the Taiwan question remains consistent with the 1972 Japan-China Joint Statement.",
+   "kind": "sent",
+   "zp": [
+    12,
+    12
+   ],
+   "ep": [
+    13,
+    13
+   ]
+  },
+  {
+   "idx": 13,
+   "zh": "她同时表示，日中四个政治文件作为两国关系基本文件的定位也没有任何改变。",
+   "en": "She also indicated that there has been no change in the status of the four political documents between Japan and China, which serve as the foundational documents for bilateral relations.",
+   "kind": "sent",
+   "zp": [
+    13,
+    13
+   ],
+   "ep": [
+    14,
+    14
+   ]
+  },
+  {
+   "idx": 14,
+   "zh": "中方对此有何评论？",
+   "en": "What is China’s comment?",
+   "kind": "sent",
+   "zp": [
+    14,
+    14
+   ],
+   "ep": [
+    15,
+    15
+   ]
+  },
+  {
+   "idx": 15,
+   "zh": "郭嘉昆：恪守中日四个政治文件是日方必须履行的政治责任和法律义务，不仅应体现在表态上，更要落实到行动上。",
+   "en": "Guo Jiakun: Abiding by the four political documents between China and Japan is the political responsibility and legal obligation that Japan must fulfill. This should be not just reflected in remarks, but more importantly, implemented with concrete actions.",
+   "kind": "sent",
+   "zp": [
+    15,
+    15
+   ],
+   "ep": [
+    16,
+    17
+   ]
+  },
+  {
+   "idx": 16,
+   "zh": "对日方而言，当前紧迫的是在台湾问题上尽快纠正错误言行，重要的是在历史问题上采取正确态度，根本的是在对华认知上真正做到客观理性。",
+   "en": "For Japan, the pressing priority is to correct the erroneous words and moves on the Taiwan question immediately, adopt a correct attitude on historical issues, and form an objective and rational perception on China.",
+   "kind": "sent",
+   "zp": [
+    16,
+    16
+   ],
+   "ep": [
+    18,
+    18
+   ]
+  },
+  {
+   "idx": 17,
+   "zh": "韩国《中央日报》记者：昨天，中俄美元首会晤在深圳成功举办。",
+   "en": "JoongAng Ilbo: Yesterday the leaders of the U.S., China and Russia held a successful summit in Shenzhen.",
+   "kind": "sent",
+   "zp": [
+    17,
+    17
+   ],
+   "ep": [
+    19,
+    19
+   ]
+  },
+  {
+   "idx": 18,
+   "zh": "据报道，中方表示三国要保持常态化高层交往。",
+   "en": "It’s reported that China said the three countries should maintain regular high-level exchanges.",
+   "kind": "sent",
+   "zp": [
+    18,
+    18
+   ],
+   "ep": [
+    20,
+    20
+   ]
+  },
+  {
+   "idx": 19,
+   "zh": "如果美方提出在下月迈阿密G20峰会期间举行第二次三国元首会晤，中方将如何回应？",
+   "en": "How would China respond if the U.S. were to host a second trilateral summit during the G20 Miami Summit next month?",
+   "kind": "sent",
+   "zp": [
+    19,
+    19
+   ],
+   "ep": [
+    21,
+    21
+   ]
+  },
+  {
+   "idx": 20,
+   "zh": "郭嘉昆：昨天中俄美元首会晤成功举行，中方已经发布消息稿，你可以查阅。",
+   "en": "Guo Jiakun: The China-Russia-U.S. Summit was successfully held yesterday. China has released a readout, which you may refer to.",
+   "kind": "sent",
+   "zp": [
+    20,
+    20
+   ],
+   "ep": [
+    22,
+    23
+   ]
+  },
+  {
+   "idx": 21,
+   "zh": "法新社记者：国际法院裁定，缅甸对其境内的罗兴亚人实施了“种族灭绝”。",
+   "en": "AFP: The United Nations International Court of Justice has ruled that Myanmar is guilty of genocide against its Rohingya Muslim minority.",
+   "kind": "sent",
+   "zp": [
+    21,
+    21
+   ],
+   "ep": [
+    24,
+    24
+   ]
+  },
+  {
+   "idx": 22,
+   "zh": "中方对此有何评论？",
+   "en": "What is China’s comment on the ruling?",
+   "kind": "sent",
+   "zp": [
+    22,
+    22
+   ],
+   "ep": [
+    25,
+    25
+   ]
+  },
+  {
+   "idx": 23,
+   "zh": "郭嘉昆：中方注意到国际法院有关判决。",
+   "en": "Guo Jiakun: China has noted the judgment of the International Court of Justice.",
+   "kind": "sent",
+   "zp": [
+    23,
+    23
+   ],
+   "ep": [
+    26,
+    26
+   ]
+  },
+  {
+   "idx": 24,
+   "zh": "若开邦问题有着非常复杂的历史、民族和宗教背景，需要综合施策，稳妥解决。",
+   "en": "Given its complex historical, ethnic and religious dimensions, the Rakhine state issue needs to be resolved prudently through a holistic approach.",
+   "kind": "sent",
+   "zp": [
+    24,
+    24
+   ],
+   "ep": [
+    27,
+    27
+   ]
+  },
+  {
+   "idx": 25,
+   "zh": "国际社会应为此共同努力，避免将这一问题复杂化。",
+   "en": "The international community should make joint efforts to this end and avoid complicating the issue.",
+   "kind": "sent",
+   "zp": [
+    25,
+    25
+   ],
+   "ep": [
+    28,
+    28
+   ]
+  },
+  {
+   "idx": 26,
+   "zh": "中方愿继续支持有关各方加强对话协商，为推动解决若开邦避乱民众遣返问题发挥建设性作用。",
+   "en": "China stands ready to continue supporting relevant parties in stepping up dialogue and consultation, and to play a constructive role in resolving the issue regarding the repatriation of the displaced people from Rakhine state.",
+   "kind": "sent",
+   "zp": [
+    26,
+    26
+   ],
+   "ep": [
+    29,
+    29
+   ]
+  },
+  {
+   "idx": 27,
+   "zh": "同时中方认为，国际司法机构是维护国际公平正义的重要工具，更要依法审慎行使职权。",
+   "en": "China believes international judicial institutions, as important instruments for upholding international fairness and justice, should exercise their powers with full prudence in accordance with law.",
+   "kind": "sent",
+   "zp": [
+    27,
+    27
+   ],
+   "ep": [
+    30,
+    30
+   ]
+  },
+  {
+   "idx": 28,
+   "zh": "中方对越权管辖和扩大解释等问题存在关切，认为有关做法不利于争端解决。",
+   "en": "China has concerns regarding such issues as ultra vires jurisdiction and overreach in interpretation, which are not conducive to the settlement of disputes.",
+   "kind": "sent",
+   "zp": [
+    28,
+    28
+   ],
+   "ep": [
+    31,
+    31
+   ]
+  },
+  {
+   "idx": 29,
+   "zh": "《环球时报》记者：中方刚刚发布了丁薛祥副总理将访问新加坡并主持中新双边合作机制会议的消息。",
+   "en": "Global Times: The Chinese side just announced that Vice Premier Ding Xuexiang will visit Singapore and co-chair the mechanism meetings on bilateral cooperation.",
+   "kind": "sent",
+   "zp": [
+    29,
+    29
+   ],
+   "ep": [
+    32,
+    32
+   ]
+  },
+  {
+   "idx": 30,
+   "zh": "发言人能否进一步介绍有关情况？",
+   "en": "Could you share more information on this?",
+   "kind": "sent",
+   "zp": [
+    30,
+    30
+   ],
+   "ep": [
+    33,
+    33
+   ]
+  },
+  {
+   "idx": 31,
+   "zh": "郭嘉昆：中国和新加坡互为友好近邻和重要合作伙伴。",
+   "en": "Guo Jiakun: China and Singapore are friendly neighbors and important cooperation partners.",
+   "kind": "sent",
+   "zp": [
+    31,
+    31
+   ],
+   "ep": [
+    34,
+    34
+   ]
+  },
+  {
+   "idx": 32,
+   "zh": "在两国领导人战略引领下，中新关系保持良好发展势头，各领域合作成果丰硕。",
+   "en": "Under the strategic guidance of the leaders of both sides, China-Singapore relations have maintained a sound momentum of growth, yielding fruitful outcomes in cooperation across various fields.",
+   "kind": "sent",
+   "zp": [
+    32,
+    32
+   ],
+   "ep": [
+    35,
+    35
+   ]
+  },
+  {
+   "idx": 33,
+   "zh": "今天上午，习近平主席同新加坡总理黄循财举行重要会晤，为下阶段中新关系发展指明方向。",
+   "en": "President Xi Jinping just had an important meeting with Prime Minister Lawrence Wong this morning, charting the course for a new stage of development for bilateral ties.",
+   "kind": "sent",
+   "zp": [
+    33,
+    33
+   ],
+   "ep": [
+    36,
+    36
+   ]
+  },
+  {
+   "idx": 34,
+   "zh": "中新双边合作机制会议是统筹两国合作的最高级别机制平台。",
+   "en": "The mechanism meetings on bilateral cooperation are the apex platform coordinating collaboration between our two countries.",
+   "kind": "sent",
+   "zp": [
+    34,
+    34
+   ],
+   "ep": [
+    37,
+    37
+   ]
+  },
+  {
+   "idx": 35,
+   "zh": "中方愿同新方共同开好此次机制会议，落实两国领导人战略共识，统筹规划下步合作，更好服务各自现代化建设，推动中新全方位高质量的前瞻性伙伴关系取得更大进展，为地区发展繁荣作出积极贡献。",
+   "en": "China stands ready to work with Singapore to make good use of the meetings to deliver on our leaders’ strategic common understandings, formulate coordinated plans for cooperation in the next phase, unlock fresh impetus for the modernization drive in both countries, seek greater progress in our all-round high-quality future-oriented partnership, and contribute to development and prosperity in the region.",
+   "kind": "sent",
+   "zp": [
+    35,
+    35
+   ],
+   "ep": [
+    38,
+    38
+   ]
+  },
+  {
+   "idx": 36,
+   "zh": "法新社记者：追问一下关于国际法院涉缅甸案的裁决，中国籍法官薛捍勤在各项裁决认定中，除其中一项外，其余均投了支持缅甸的票，请问这是否是中国政府的授意？",
+   "en": "AFP: This is a follow-up on the question about the International Court of Justice’s ruling on Myanmar. The Chinese ICJ jurist Xue Hanqin voted in Myanmar’s favor on all but one count. So my question is, was Ms. Xue acting on the instructions from the Chinese government?",
+   "kind": "sent",
+   "zp": [
+    36,
+    36
+   ],
+   "ep": [
+    39,
+    41
+   ]
+  },
+  {
+   "idx": 37,
+   "zh": "郭嘉昆：国际法院是联合国主要司法机关，法官以个人身份独立履职。",
+   "en": "Guo Jiakun: The International Court of Justice is the principal judicial organ of the United Nations.",
+   "kind": "sent",
+   "zp": [
+    37,
+    37
+   ],
+   "ep": [
+    42,
+    42
+   ]
+  },
+  {
+   "idx": 38,
+   "zh": "薛捍勤法官基于国际法和案件事实，根据其专业知识发表意见，符合法院正常工作程序和实践做法，也是其履职尽责的表现。",
+   "en": "Its judges serve in their individual capacity and perform their duties independently. Judge Xue Hanqin’s expression of her views is grounded in international law and the facts of the case, and informed by her expertise. This is consistent with the court’s established procedures and practices, and reflects the proper fulfillment of her responsibilities.",
+   "kind": "sent",
+   "zp": [
+    38,
+    38
+   ],
+   "ep": [
+    43,
+    45
+   ]
+  },
+  {
+   "idx": 39,
+   "zh": "《北京青年报》记者：今天中方公布了第三届兰花奖评选结果，共有10位国际友人获奖。",
+   "en": "Beijing Youth Daily: A total of ten foreign nationals received the Third Orchid Awards, according to selection results released by the Chinese side today.",
+   "kind": "sent",
+   "zp": [
+    39,
+    39
+   ],
+   "ep": [
+    46,
+    46
+   ]
+  },
+  {
+   "idx": 40,
+   "zh": "发言人对此有何评论？",
+   "en": "Would you like to comment on this?",
+   "kind": "sent",
+   "zp": [
+    40,
+    40
+   ],
+   "ep": [
+    47,
+    47
+   ]
+  },
+  {
+   "idx": 41,
+   "zh": "郭嘉昆：我们对获奖者表示祝贺。",
+   "en": "Guo Jiakun: We congratulate the laureates of the 2026 Orchid Awards.",
+   "kind": "sent",
+   "zp": [
+    41,
+    41
+   ],
+   "ep": [
+    48,
+    48
+   ]
+  },
+  {
+   "idx": 42,
+   "zh": "他们来自五湖四海，但都致力于以文化消弭偏见、以交流增进理解，用数十年如一日的努力搭建起中外友好的民间桥梁。 自2022年设立以来，兰花奖已成为践行全球文明倡议的国际性文化平台。",
+   "en": "Hailing from all over the world, they share the same commitment to dispelling prejudice and nurturing understanding through cultural exchanges. Through decades of dedicated efforts, they have built bridges of friendship connecting the people of China and other countries. Established in 2022, the Orchid Awards have become an international cultural platform that delivers on the Global Civilization Initiative.",
+   "kind": "sent",
+   "zp": [
+    42,
+    43
+   ],
+   "ep": [
+    49,
+    51
+   ]
+  },
+  {
+   "idx": 43,
+   "zh": "中方愿同各方一道，推动不同文明、不同文化、不同民族间实现团结合作、共同进步，携手构建人类命运共同体。",
+   "en": "China is ready to work with all parties to foster solidarity and enhance cooperation among different civilizations, cultures and peoples to seek common progress and build a community with a shared future for humanity.",
+   "kind": "sent",
+   "zp": [
+    44,
+    44
+   ],
+   "ep": [
+    52,
+    52
+   ]
+  },
+  {
+   "idx": 44,
+   "zh": "朝日新闻记者：中俄美元首会晤达成的《和平宣言》提到“国际刑事法院以及其他类似机构不得滥用管辖权”。",
+   "en": "Asahi Shimbun: The China-Russia-U.S. Heads of State Declaration toward Peace said that the International Criminal Court and other similar bodies must not abuse their jurisdiction. I have two questions.",
+   "kind": "sent",
+   "zp": [
+    45,
+    45
+   ],
+   "ep": [
+    53,
+    54
+   ]
+  },
+  {
+   "idx": 45,
+   "zh": "中方认为，什么情况下算是“滥用管辖权”？ “其他类似机构”具体指哪些机构？",
+   "en": "First, how would China define the “abuse” of jurisdiction? Second, what exactly do “other similar bodies” refer to?",
+   "kind": "sent",
+   "zp": [
+    46,
+    47
+   ],
+   "ep": [
+    55,
+    55
+   ]
+  },
+  {
+   "idx": 46,
+   "zh": "郭嘉昆：在国际刑事法院问题上，中方的立场一贯、明确、公开。",
+   "en": "Guo Jiakun: On the International Criminal Court, China’s position is consistent, clear and above-board.",
+   "kind": "sent",
+   "zp": [
+    48,
+    48
+   ],
+   "ep": [
+    56,
+    56
+   ]
+  },
+  {
+   "idx": 47,
+   "zh": "同时，中方一贯支持国际司法机构为促进国际法治发挥建设性作用，主张任何国际司法机构都不应违背国家同意原则，不应滥用管辖权，应该避免政治化和双重标准。",
+   "en": "China supports international judicial bodies in playing a constructive role for upholding international rule of law. That said, China stands that no international judicial body should violate the principle of state consent, abuse their jurisdiction, engage in politicization, or apply double standards.",
+   "kind": "sent",
+   "zp": [
+    49,
+    49
+   ],
+   "ep": [
+    57,
+    58
+   ]
+  }
+ ]
+}
