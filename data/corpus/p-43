@@ -2,8 +2,8 @@
  "units": [
   {
    "idx": 1,
-   "zh": "共同开创可持续的美好明天",
-   "en": "Jointly Forging a Sustainable and Brighter Future",
+   "zh": "发挥亚太引领作用 共促世界发展繁荣",
+   "en": "Putting the Asia Pacific at the Forefront of the Joint Endeavor for World Development and Prosperity",
    "kind": "para",
    "zp": [
     1,
@@ -16,134 +16,120 @@
   },
   {
    "idx": 2,
-   "zh": "——在亚太经合组织第三十二次领导人非正式会议第二阶段会议上的讲话 中华人民共和国主席 习近平",
-   "en": "Remarks by H.E. Xi Jinping President of the People’s Republic of China At Session II of the 32nd APEC Economic Leaders’ Meeting",
+   "zh": "——在亚太经合组织工商领导人峰会上的书面演讲 （2025年10月31日，庆州） 中华人民共和国主席 习近平",
+   "en": "Written Address by H.E. Xi Jinping President of the People’s Republic of China At the APEC CEO Summit Gyeongju, October 31, 2025",
    "kind": "para",
    "zp": [
     4,
-    5
+    6
    ],
    "ep": [
-    6,
-    8
-   ]
-  },
-  {
-   "idx": 3,
-   "zh": "（2025年11月1日，庆州）",
-   "en": "Gyeongju, November 1, 2025",
-   "kind": "para",
-   "zp": [
-    10,
-    10
-   ],
-   "ep": [
-    11,
+    8,
     11
    ]
   },
   {
-   "idx": 4,
-   "zh": "尊敬的李在明总统， 各位同事：",
-   "en": "Your Excellency President Lee Jae Myung, Colleagues,",
+   "idx": 3,
+   "zh": "各位工商界代表， 女士们，先生们，朋友们：",
+   "en": "Representatives of the Business Community, Ladies and Gentlemen, Friends,",
    "kind": "para",
    "zp": [
-    15,
-    16
+    13,
+    14
    ],
    "ep": [
-    17,
-    18
+    15,
+    17
+   ]
+  },
+  {
+   "idx": 4,
+   "zh": "很高兴再次到访历史古城庆州，出席亚太经合组织工商领导人峰会。",
+   "en": "I am very pleased to visit the historic city of Gyeongju again for the APEC CEO Summit.",
+   "kind": "para",
+   "zp": [
+    19,
+    19
+   ],
+   "ep": [
+    20,
+    20
    ]
   },
   {
    "idx": 5,
-   "zh": "当前，新一轮科技革命和产业变革深入发展，特别是人工智能等前沿技术快速发展，为人类社会开辟了新前景。同时，世界经济增长动能不足，全球发展赤字扩大，气候变化、粮食和能源安全等挑战加剧。亚太各经济体应该加强互利合作，把握新机遇，应对新挑战，共同开创可持续的美好明天。为此，我提3点建议。",
-   "en": "At present, the new wave of scientific and technological revolution and industrial transformation is deepening. In particular, the rapid advance of frontier technologies such as artificial intelligence is opening new horizons for humanity. On the other hand, the world faces lackluster economic growth and a widening gap in global development. Challenges such as climate change, food security and energy security are intensifying. Asia Pacific economies must enhance mutually beneficial cooperation, make good use of new opportunities, stand up to new challenges, and forge a sustainable and brighter future together. To this end, I would like to make three propositions.",
+   "zh": "当前，世界百年变局加速演进，国际形势变乱交织，全球经济增长乏力。世界正站在新的十字路口：是团结合作、互利共赢，还是重回霸权主义、丛林法则？是坚持多边主义、开放包容，还是走向单边主义、保护主义？何去何从将深刻影响世界的未来。我们要展现远见和担当，作出符合亚太人民期待、经得起历史检验的抉择。",
+   "en": "The world today is undergoing accelerated transformation unseen in a century, the international landscape is fraught with changes and turbulence, and global economic recovery remains sluggish. The world has come to a new crossroads—solidarity, cooperation and mutual benefit or return of hegemonism and the law of the jungle; multilateralism, openness and inclusiveness or unilateralism and protectionism. What we choose will profoundly affect the future of the world. We must have vision, step up to our responsibility, and choose what meets the expectation of the people in the Asia Pacific and stands the test of history.",
    "kind": "para",
    "zp": [
-    20,
-    20
+    22,
+    22
    ],
    "ep": [
-    21,
-    21
+    23,
+    23
    ]
   },
   {
    "idx": 6,
-   "zh": "一是强化数智赋能，塑造亚太创新发展新优势。我们要充分发挥新技术的驱动和赋能作用，抢抓数字化、智能化、绿色化机遇，加快培育发展新质生产力。激活数据的基础资源作用和创新引擎作用，推进数据安全有序流动，加快数字经济高质量发展。深化技术开源开放合作，创建具有竞争力的开放创新生态。",
-   "en": "First, we should further unleash the potential of digital and smart development to give the Asia Pacific region a fresh edge in innovation-driven development. We should fully harness new technologies to empower and propel us forward, seize the opportunities of digital, smart and green development, and move faster to nurture and promote new quality productive forces. We should spark data into life as a basic resource and an engine for innovation, promote safe and orderly flow of data, and accelerate high-quality development of the digital economy. We should deepen cooperation on open-source technologies and build an open, competitive ecosystem for innovation.",
+   "zh": "“往古者，所以知今也。”80年前，世界反法西斯战争取得伟大胜利，逐步建立起以联合国为核心的国际体系，在经济、贸易、金融等领域形成多边体制，开启了人类和平与发展事业新篇章。",
+   "en": "As the saying goes, “He who knows the past understands the present.” Since the great victory of the World Anti-Fascist War 80 years ago, the international system with the United Nations at its core has been put in place gradually, and multilateral systems in economic, trade, financial and other areas have been established. A new chapter was opened for humanity’s pursuit of peace and development.",
    "kind": "para",
    "zp": [
-    23,
-    23
+    25,
+    25
    ],
    "ep": [
-    24,
-    24
+    26,
+    26
    ]
   },
   {
    "idx": 7,
-   "zh": "人工智能对未来发展具有重大意义，应该使之为各国各地区人民造福。我们要以全人类福祉为念，推动人工智能朝着有益、安全、公平方向健康有序发展。中国倡议成立世界人工智能合作组织，希望通过发展战略、治理规则、技术标准等合作，积极为国际社会提供人工智能公共产品。中方愿同亚太经合组织各成员一道，共同提升民众人工智能素养，弥合亚太地区数字和智能鸿沟。",
-   "en": "AI is very important for shaping the future, and should contribute to the well-being of people of all countries and regions. We should bear in mind the well-being of the entire humanity, and promote the sound and orderly development of AI while ensuring that it is beneficial, safe and fair. China has proposed the establishment of a World Artificial Intelligence Cooperation Organization, which we hope will provide the international community with public goods on AI through cooperation on development strategies, governance rules and technological standards. China is ready to work with all APEC members to enhance AI literacy and bridge the digital and AI divide in the Asia Pacific region.",
+   "zh": "历史昭示我们，人类命运休戚与共，霸权主义只会带来战乱和灾难，公平正义才是促进世界和平与发展的重要保障；对抗对立只会带来隔阂和动荡，合作共赢才是越走越宽的人间正道；单边主义只会带来割裂和倒退，多边主义才是应对全球性挑战的必然选择。",
+   "en": "History attests that humanity shares a common destiny. While hegemonism causes only war and disaster, fairness and justice ensure global peace and development. While confrontation and antagonism breed only estrangement and turbulence, win-win cooperation proves to be the right way forward. While unilateralism precipitates division and regression, multilateralism is the viable option for tackling global challenges.",
    "kind": "para",
    "zp": [
-    26,
-    26
+    28,
+    28
    ],
    "ep": [
-    27,
-    27
+    29,
+    29
    ]
   },
   {
    "idx": 8,
-   "zh": "二是坚持绿色低碳，打造亚太可持续发展新范式。绿水青山就是金山银山。我们要本着对子孙后代负责的态度，加强各经济体绿色发展战略对接，促进优质绿色技术和产品自由流通，加快推动发展方式绿色低碳转型，积极应对气候变化。切实履行共同但有区别的责任，敦促发达经济体向发展中经济体持续提供必要的资金、技术、能力建设等方面支持。",
-   "en": "Second, we should stay committed to green and low-carbon development to build a new paradigm for sustainable development in the Asia Pacific region. Clear waters and green mountains are just as valuable as gold and silver. We should keep in mind our responsibility to our future generations, enhance synergy between green development strategies of all economies, promote free flows of quality green technologies and products, accelerate the green and low-carbon transition, and vigorously tackle climate change. We should ensure the true fulfillment of common but differentiated responsibilities, and urge developed economies to continuously provide necessary support for developing economies in financing, technology, capacity building and other areas.",
+   "zh": "中国始终是现行国际秩序的维护者、真正多边主义的践行者。中方倡导和平发展，反对国强必霸；倡导合作共赢，反对赢者通吃；倡导文明互鉴，反对文明冲突；倡导公道公正，反对强权政治。中国相继提出共建“一带一路”倡议和全球发展倡议、全球安全倡议、全球文明倡议、全球治理倡议，为解决当今世界突出问题贡献了中国智慧和中国方案。中方期待同各方一道，共促繁荣、共赢未来，携手构建人类命运共同体。",
+   "en": "China always upholds the current international order and practices true multilateralism. We embrace peaceful development, and reject the assertion that a strong country will inevitably seek hegemony. We champion win-win cooperation, and denounce winner-takes-all practices. We advocate mutual learning among civilizations, and do not believe in clash of civilizations. We promote fairness and justice, and oppose power politics. China has successively put forward the Belt and Road Initiative as well as the Global Development Initiative, the Global Security Initiative, the Global Civilization Initiative, and the Global Governance Initiative. They are China’s solutions to the salient issues across the world, based on Chinese wisdom. We look forward to working with all parties to promote common prosperity and a win-win future for all, and building a community with a shared future for humanity.",
    "kind": "para",
    "zp": [
-    29,
-    29
+    31,
+    31
    ],
    "ep": [
-    30,
-    30
+    32,
+    32
    ]
   },
   {
    "idx": 9,
-   "zh": "中国自5年前宣布碳达峰碳中和目标以来，已经建成全球最大、发展最快的可再生能源体系，新能源汽车、锂电池、光伏等产业蓬勃发展。中国已经提交应对气候变化2035年国家自主贡献目标，将全面实施碳排放总量和强度双控制度。中方捐资设立亚太经合组织数字化绿色化转型子基金，将继续落实清洁能源、绿色转型相关倡议。",
-   "en": "Since announcing our carbon peaking and carbon neutrality goals five years ago, China has established the world’s largest and fastest-growing renewable energy system. Industries such as new energy vehicles, lithium-ion batteries and photovoltaics are thriving. China has submitted its 2035 Nationally Determined Contributions on climate response, and will implement the system of dual control over the volume and intensity of carbon emissions across the board. China has funded the establishment of the APEC Support Fund – Sub-fund on Promoting Digitalization for Green Transitions, and will continue to implement relevant initiatives on clean energy and green transition.",
+   "zh": "女士们、先生们、朋友们！",
+   "en": "Ladies and Gentlemen, Friends,",
    "kind": "para",
    "zp": [
-    32,
-    32
+    34,
+    34
    ],
    "ep": [
-    33,
-    33
-   ]
-  },
-  {
-   "idx": 10,
-   "zh": "三是落实普惠共享，展现亚太包容发展新气象。我们要坚持人民至上，加强政策沟通、经验分享、务实合作，全面落实联合国2030年可持续发展议程，携手消除贫困，促进亚太全体人民共同富裕。充分发挥亚太经合组织开展经济技术合作的传统优势，推动亚太经济体率先试行世贸组织《电子商务协定》，深化中小企业发展、人力资源开发、粮食安全、能源转型、卫生健康等合作，助力发展中经济体实现平衡发展。",
-   "en": "Third, we should build an inclusive and universally beneficial future to foster a new dynamism in the inclusive growth of the Asia Pacific. We should always put the people first, and strengthen policy communication, experience sharing and results-oriented cooperation to fully implement the United Nations 2030 Agenda for Sustainable Development, eliminate poverty together, and promote shared prosperity for all the people in the Asia Pacific. We should fully leverage APEC’s traditional strength in economic and technical cooperation, encourage Asia Pacific economies to take the lead in piloting the WTO’s Agreement on Electronic Commerce, and deepen cooperation in such areas as SMEs, human resources, food security, energy transition, and health to facilitate balanced growth in developing economies.",
-   "kind": "para",
-   "zp": [
     35,
-    35
-   ],
-   "ep": [
-    36,
     36
    ]
   },
   {
-   "idx": 11,
-   "zh": "今年，韩国提出应对人口结构变化合作倡议，这有助于促进亚太包容发展。中国将加快完善覆盖全人群、全生命周期的人口服务体系，大力发展银发经济，促进人口高质量发展。中方将推动落实人工智能助力卫生健康、提升女性数字素养等倡议，让更多合作成果惠及亚太地区人民。",
-   "en": "This year, the Republic of Korea has proposed the Collaborative Framework for Demographic Change, which will contribute to inclusive development in the Asia Pacific. In China, we will move faster to improve the system that provides full life-cycle population services to all the Chinese people. We will vigorously develop the silver economy, and push forward high-quality development of the population. We will promote the implementation of the initiatives that seek to deploy AI in health-care and enhance digital literacy and skills for women, so that all Asia Pacific can benefit from APEC cooperation.",
+   "idx": 10,
+   "zh": "亚太经合组织因应经济全球化浪潮而创立，以促进贸易和投资自由化便利化、支持经济增长和繁荣为目标宗旨。1991年，亚太经合组织韩国会议发表宣言，强调各方应该相互依存、共同受益。今天我们在韩国再次聚首，应该重温创立亚太经合组织初心，以更具活力和韧性的亚太合作为世界作出突出贡献。",
+   "en": "Founded in response to the trend of economic globalization, APEC takes it as its objective and purpose to promote trade and investment liberalization and facilitation and support economic growth and prosperity. The 1991 Seoul APEC Declaration highlighted interdependence and shared benefit. Today, as we gather once again in the Republic of Korea, we should renew our commitment to the founding mission of APEC and make outstanding contributions to the world through more vibrant and resilient Asia Pacific cooperation.",
    "kind": "para",
    "zp": [
     38,
@@ -155,9 +141,9 @@
    ]
   },
   {
-   "idx": 12,
-   "zh": "“孤举者难起，众行者易趋。”中方愿同各方一道，坚持创新、协调、绿色、开放、共享的发展理念，携手构建亚太共同体。",
-   "en": "As a 19th-century Chinese thinker counseled, “Alone, one falters under the weight; Together, we stride on the road.” China is ready to work with all parties to embrace the philosophy of innovative, coordinated, green, open and shared development, and build together an Asia Pacific community.",
+   "idx": 11,
+   "zh": "第一，带头维护和平稳定。我们要坚持各国无论大小、强弱、贫富，都有平等参与国际事务的权利。坚持共同、综合、合作、可持续的安全观，通过对话协商解决分歧和争端。",
+   "en": "First, we should take the lead in safeguarding peace and stability. We must always ensure the equal right of all countries to participate in international affairs regardless of their size, strength, or wealth. We should embrace the vision of common, comprehensive, cooperative, and sustainable security, and resolve differences and disputes through dialogue and consultation.",
    "kind": "para",
    "zp": [
     41,
@@ -169,9 +155,9 @@
    ]
   },
   {
-   "idx": 13,
-   "zh": "谢谢大家！",
-   "en": "Thank you.",
+   "idx": 12,
+   "zh": "第二，带头实行开放融通。我们要坚定维护以世贸组织为核心、以规则为基础的多边贸易体制，加强团结协作，反对保护主义，抵制单边霸凌，避免世界重回丛林法则。勇于“拆墙”，维护全球产业链供应链稳定畅通，推进区域经济一体化和亚太自由贸易区建设，为全球经济增长贡献亚太力量。",
+   "en": "Second, we should take the lead in enhancing openness and connectivity. We should firmly safeguard the WTO-centered, rules-based multilateral trading system, strengthen solidarity and collaboration, oppose protectionism, reject unilateralism and bullying, and prevent the world from reverting to the law of the jungle. We must have the courage to remove barriers, keep global industrial and supply chains stable and unimpeded, advance regional economic integration, push forward the Free Trade Area of the Asia Pacific, and play the Asia Pacific part in global economic growth.",
    "kind": "para",
    "zp": [
     44,
@@ -180,6 +166,202 @@
    "ep": [
     45,
     45
+   ]
+  },
+  {
+   "idx": 13,
+   "zh": "第三，带头坚持合作共赢。我们要秉持和而不同理念，充分发挥亚太经济体多样性突出的特点，促进优势互补，共同做大亚太合作蛋糕，兼顾自身利益和他方利益，形成各国相互成就、共同发展的合作格局。",
+   "en": "Third, we should take the lead in promoting win-win cooperation. We should stay true to the vision of harmony without uniformity, fully leverage the diversity of Asia Pacific economies, draw on each other’s strengths, and jointly make the pie of Asia Pacific cooperation bigger. We should advance both our respective interests and those of others, and foster an environment of cooperation to achieve success and development for all economies.",
+   "kind": "para",
+   "zp": [
+    47,
+    47
+   ],
+   "ep": [
+    48,
+    48
+   ]
+  },
+  {
+   "idx": 14,
+   "zh": "第四，带头促进普惠包容。我们要坚持以人为本，全面落实联合国2030年可持续发展议程，深化发展战略对接，加大对发展中经济体支持，更好弥合发展鸿沟，不断增进人民福祉，促进亚太全体人民共同富裕。",
+   "en": "Fourth, we should take the lead in pursuing benefits for all and inclusiveness. We should put the people first, and fully implement the U.N. 2030 Agenda for Sustainable Development. We should create greater synergy between our development strategies, and step up support for developing economies. We should bridge development gaps, increase people’s well-being, and deliver prosperity to all the people in the Asia Pacific.",
+   "kind": "para",
+   "zp": [
+    50,
+    50
+   ],
+   "ep": [
+    51,
+    51
+   ]
+  },
+  {
+   "idx": 15,
+   "zh": "明年，中国将第三次担任亚太经合组织东道主，这体现了中方对亚太合作的高度重视和责任担当。中方将顺应时代发展大势，倾听各成员呼声，同各方携手构建亚太共同体，为亚太乃至世界和平与发展注入新动力。",
+   "en": "Next year, China will host APEC for the third time. This demonstrates our full commitment to Asia Pacific cooperation and our willingness to fulfill our responsibilities. We will follow the trend of the times, listen to the calls of APEC members, and work together to build an Asia Pacific community, so as to further boost peace and development in the Asia Pacific and the wider world.",
+   "kind": "para",
+   "zp": [
+    53,
+    53
+   ],
+   "ep": [
+    54,
+    54
+   ]
+  },
+  {
+   "idx": 16,
+   "zh": "女士们、先生们、朋友们！",
+   "en": "Ladies and Gentlemen, Friends,",
+   "kind": "para",
+   "zp": [
+    56,
+    56
+   ],
+   "ep": [
+    57,
+    58
+   ]
+  },
+  {
+   "idx": 17,
+   "zh": "多年来，中国一直是世界经济增长的主要贡献者。今年是中国“十四五”规划收官之年。近5年来，在外部冲击明显加大的背景下，中国经济实现5.5%左右的平均增速，对全球经济增长的贡献率稳定在30%左右。",
+   "en": "China has been a major engine of world economic growth for many years. China’s 14th Five-Year Plan period ends this year. In the past five years, despite increasing external shocks, the Chinese economy has registered an annual growth rate of around 5.5 percent on average, contributing around 30 percent of global growth.",
+   "kind": "para",
+   "zp": [
+    60,
+    60
+   ],
+   "ep": [
+    61,
+    61
+   ]
+  },
+  {
+   "idx": 18,
+   "zh": "不久前，中共二十届四中全会通过了关于制定“十五五”规划的建议。中国将继续以高水平对外开放促进深层次改革、推动高质量发展，为亚太和世界经济带来更多稳定性和确定性，是全球工商界投资兴业的沃土。",
+   "en": "A few days ago, the 20th Central Committee of the Communist Party of China adopted the Recommendations for Formulating the 15th Five-Year Plan at its fourth plenary session. We will continue to deepen reform and high-quality development through high-standard opening up, bring more stability and certainty to the Asia Pacific and world economy, and provide fertile soil for global investors and entrepreneurs.",
+   "kind": "para",
+   "zp": [
+    63,
+    63
+   ],
+   "ep": [
+    64,
+    64
+   ]
+  },
+  {
+   "idx": 19,
+   "zh": "——中国能够为全球工商界提供更多发展机遇。中国已经成为全球第二大消费市场和进口市场，是唯一举办国家级国际进口博览会、持续向全世界开放市场的发展中国家，市场空间大、成长预期好。中方持续推进高水平对外开放，同各方在开放联通中相互成就。",
+   "en": "—China can provide more growth opportunities for the global business community. It is now the world’s second largest market of consumption and import, and the only developing country that hosts a national-level international import expo and continually opens its market to the world. The China market is huge and promising. We are continually advancing high-standard opening up, and strive to help all sides succeed through greater openness and connectivity.",
+   "kind": "para",
+   "zp": [
+    66,
+    66
+   ],
+   "ep": [
+    67,
+    67
+   ]
+  },
+  {
+   "idx": 20,
+   "zh": "——中国能够为全球工商界提供良好营商环境。中国持续建设市场化、法治化、国际化的一流营商环境，促进各类所有制企业公平竞争、竞相发展。中国外资准入负面清单已经减至29项，制造业领域已经实现“清零”，服务业将继续扩大开放。中国是全球公认最安全的国家之一，已对全球76个国家实行单方面免签或全面互免签证，“中国游”、“中国购”持续火爆，外国朋友来华投资、工作、生活更加便利。",
+   "en": "—China can provide a good business environment for the global business community. China is fostering a market-oriented, law-based and world-class business environment to help companies of different types of ownership to grow and thrive through fair competition. There are only 29 items left on China’s negative list for foreign investment, and zero items in the manufacturing sector. We will also continue to open the services sector. China is universally recognized as one of the safest countries in the world, and grants either unilateral visa exemption or full mutual visa-free entry to 76 countries. Sightseeing and shopping in China have become a popular trend in the world, and our foreign friends will find it more and more convenient to invest, work and live in China.",
+   "kind": "para",
+   "zp": [
+    69,
+    69
+   ],
+   "ep": [
+    70,
+    70
+   ]
+  },
+  {
+   "idx": 21,
+   "zh": "——中国能够为全球工商界提供宽广创新舞台。中国积极发展未来产业、壮大新兴产业、升级传统产业，创新势能正持续转化为经济动能。中国绿色化、数字化、智能化加快发展，人工智能、量子技术、人形机器人、新能源汽车、生物医药等不断取得新突破，成为全球新技术的“推广场”、“应用场”。事实证明，谁站稳了中国市场，谁就能在日益激烈的国际竞争中占据先机。",
+   "en": "—China can provide a vast platform of innovation for the global business community. We are vigorously developing future industries, strengthening emerging industries, and upgrading traditional industries. Innovation is steadily driving the economy forward. China is going green, digital and smart at a faster pace. Breakthroughs are being made one after another in AI, quantum technologies, humanoids, new-energy vehicles, and biomedicine. China is now a global destination for the promotion and application of new technologies. Facts have proved that whoever establishes a solid presence in the Chinese market will stay ahead of the curve in the increasingly fierce international competition.",
+   "kind": "para",
+   "zp": [
+    72,
+    72
+   ],
+   "ep": [
+    73,
+    73
+   ]
+  },
+  {
+   "idx": 22,
+   "zh": "——中国能够为全球工商界提供绿色增长条件。中国协同推进降碳、减污、扩绿、增长，建成全球最大的可再生能源体系、最大最完整的新能源产业链，新增绿色面积占全球四分之一。中国致力于实现碳达峰碳中和目标，积极开展绿色能源项目合作，支持优质绿色技术和产品自由流通，为发展中国家提供力所能及的帮助，对推动全球经济绿色低碳转型作出的贡献有目共睹。",
+   "en": "—China can provide enabling conditions of green growth for the global business community. China is making coordinated advances in decarbonizing, mitigating pollution, expanding green transition and promoting growth. It has the largest renewable energy system and the biggest, most complete new energy industrial chain in the world. The increased area of afforestation in China accounts for a quarter of the world total. We are committed to meeting our carbon peaking and carbon neutrality targets. We are actively advancing cooperation in launching green energy projects. We support the free flow of quality green technologies and products, and do our best to provide assistance to developing countries. China’s contribution to the green and low-carbon transition of the global economy is widely recognized.",
+   "kind": "para",
+   "zp": [
+    75,
+    75
+   ],
+   "ep": [
+    76,
+    76
+   ]
+  },
+  {
+   "idx": 23,
+   "zh": "总之，中国是全球工商界理想、安全、有为的投资目的地，与中国同行就是与机遇同行，相信中国就是相信明天，投资中国就是投资未来。",
+   "en": "In short, China is an ideal, safe and promising destination for global investors. Partnering with China means embracing opportunities. Believing in China means being optimistic about tomorrow. And investing in China means investing in the future.",
+   "kind": "para",
+   "zp": [
+    78,
+    78
+   ],
+   "ep": [
+    79,
+    79
+   ]
+  },
+  {
+   "idx": 24,
+   "zh": "女士们、先生们、朋友们！",
+   "en": "Ladies and Gentlemen, Friends,",
+   "kind": "para",
+   "zp": [
+    81,
+    81
+   ],
+   "ep": [
+    82,
+    83
+   ]
+  },
+  {
+   "idx": 25,
+   "zh": "亚太工商界是时代的先行者、变革的开拓者、潮流的引领者。希望大家继续发扬开拓进取、开放创新、坚韧不拔的企业家精神，共促亚太增长和繁荣，为开创亚太和世界更加美好的未来汇聚强大合力。我们诚挚邀请大家明年共赴中国、共襄盛举！",
+   "en": "The Asia Pacific business communities are forerunners of our times, pioneers of change, and trendsetters of the world. I hope that you will carry forward the spirit of entrepreneurship, remain pioneering, open-minded, innovative and resilient, work together to promote Asia Pacific growth and prosperity, and forge a mighty force to usher in a great future for the Asia Pacific and the world. We sincerely invite you to China next year to advance our joint lofty cause.",
+   "kind": "para",
+   "zp": [
+    85,
+    85
+   ],
+   "ep": [
+    86,
+    86
+   ]
+  },
+  {
+   "idx": 26,
+   "zh": "谢谢大家！",
+   "en": "Thank you!",
+   "kind": "para",
+   "zp": [
+    88,
+    88
+   ],
+   "ep": [
+    89,
+    89
    ]
   }
  ]
