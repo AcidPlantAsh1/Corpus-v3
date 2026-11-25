@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-25T06:37:45.720Z",
+ "updatedAt": "2026-11-25T06:43:29.439Z",
  "version": 2,
  "folders": [],
  "files": [
@@ -387,22 +387,12 @@
    "bytes": 30165
   },
   {
-   "name": "20251030习近平同美国总统特朗普在釜山举行会晤（外交部通稿） (1)",
-   "folder": "",
-   "origin": "docx",
-   "urls": {},
-   "importedAt": 1795568683842,
-   "shard": "p-39",
-   "units": 12,
-   "bytes": 7604
-  },
-  {
    "name": "20251031习近平在亚太经合组织第三十二次领导人非正式会议第一阶段会议上的讲话 (1)",
    "folder": "",
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568683860,
-   "shard": "p-40",
+   "shard": "p-39",
    "units": 16,
    "bytes": 8168
   },
@@ -412,7 +402,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568683878,
-   "shard": "p-41",
+   "shard": "p-40",
    "units": 10,
    "bytes": 6276
   },
@@ -422,7 +412,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568683897,
-   "shard": "p-42",
+   "shard": "p-41",
    "units": 14,
    "bytes": 9198
   },
@@ -432,7 +422,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568683922,
-   "shard": "p-43",
+   "shard": "p-42",
    "units": 13,
    "bytes": 7491
   },
@@ -442,7 +432,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568683940,
-   "shard": "p-44",
+   "shard": "p-43",
    "units": 26,
    "bytes": 13766
   },
@@ -452,7 +442,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568683960,
-   "shard": "p-45",
+   "shard": "p-44",
    "units": 12,
    "bytes": 12459
   },
@@ -462,7 +452,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568683981,
-   "shard": "p-46",
+   "shard": "p-45",
    "units": 13,
    "bytes": 11264
   },
@@ -472,7 +462,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568684001,
-   "shard": "p-47",
+   "shard": "p-46",
    "units": 20,
    "bytes": 19763
   },
@@ -482,7 +472,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568684061,
-   "shard": "p-48",
+   "shard": "p-47",
    "units": 396,
    "bytes": 123137
   },
@@ -492,7 +482,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568684086,
-   "shard": "p-49",
+   "shard": "p-48",
    "units": 13,
    "bytes": 4838
   },
@@ -502,7 +492,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568684109,
-   "shard": "p-50",
+   "shard": "p-49",
    "units": 12,
    "bytes": 6177
   },
@@ -512,7 +502,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568684134,
-   "shard": "p-51",
+   "shard": "p-50",
    "units": 16,
    "bytes": 5127
   },
@@ -522,7 +512,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568684160,
-   "shard": "p-52",
+   "shard": "p-51",
    "units": 13,
    "bytes": 6608
   },
@@ -532,7 +522,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568684191,
-   "shard": "p-53",
+   "shard": "p-52",
    "units": 10,
    "bytes": 8929
   },
@@ -542,7 +532,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568684218,
-   "shard": "p-54",
+   "shard": "p-53",
    "units": 8,
    "bytes": 6977
   },
@@ -552,7 +542,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568684241,
-   "shard": "p-55",
+   "shard": "p-54",
    "units": 11,
    "bytes": 11124
   },
@@ -562,7 +552,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795568684266,
-   "shard": "p-56",
+   "shard": "p-55",
    "units": 18,
    "bytes": 13850
   },
@@ -572,7 +562,7 @@
    "origin": "docx",
    "urls": {},
    "importedAt": 1795573329448,
-   "shard": "p-57",
+   "shard": "p-56",
    "units": 264,
    "bytes": 151351
   }
