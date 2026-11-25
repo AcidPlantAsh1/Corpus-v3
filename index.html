@@ -404,6 +404,16 @@ kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-r
 <div class="mask" id="mask">
   <div class="modal">
     <div class="mhead"><h3>设置</h3><button class="x" id="btnClose" type="button">×</button></div>
+    <div class="fld" style="background:var(--acc-soft);border:1px solid var(--acc);border-radius:12px;padding:12px;margin-top:6px">
+      <label style="color:var(--acc);font-weight:700;font-size:13px">离线备份</label>
+      <div class="tip">把语料库与词语表打包成一份文件存到本机。断网时打开本页仍可用本机缓存查询；换设备时用「从备份恢复」导入即可，无需联网。</div>
+      <div class="row" style="margin-top:8px">
+        <button class="btn" id="btnBackupLocal" type="button">将语料库和词语表备份到本地</button>
+        <button class="iconbtn" id="btnRestoreLocal" type="button">从备份恢复</button>
+      </div>
+      <input type="file" id="restoreFile" accept=".json" hidden>
+      <div class="astat" id="backupStat"></div>
+    </div>
     <div class="fld"><label>共享数据（GitHub 仓库）</label>
       <div class="row" style="margin-top:0;gap:6px">
         <input type="text" id="ghOwner" placeholder="GitHub 用户名/组织" style="flex:1 1 120px">
@@ -1084,6 +1094,7 @@ function mergeFeat(list){
 
 /* SECTION: dp-align —— 带锚点的句级动态规划对齐
    系数由坐标扫描在两场景联合评分下调定（无格式整块语料 gold 配对 91.7%、
+
    中英双网页 8/8 探针）：长度惩罚 lp=1.2、期望比 rt=1.6（汉字/英文词）。
 
    意译类词（定心丸→inject confidence into）本地只能给位置线索，需 AI 逐段抽取确认。 */
@@ -2734,6 +2745,8 @@ async function openOriginalByName(name){
 
 /* SECTION: share —— GitHub 仓库共享数据（读公开、写需各自令牌） */
 const K_SHARE='cn2en.share.v1';
+/* 语料分片存储：每个语料文件一份 JSON，单文件远小于 1MB，追加/修改只提交变化的文件 */
+const CORPUS_DIR='data/corpus/', CORPUS_INDEX='data/corpus/index.json';
 let share={owner:'',repo:'',branch:'main',token:''};
 function loadShare(){
   try{ share=Object.assign(share,JSON.parse(S.get(K_SHARE)||'{}')); }catch(e){}
@@ -2781,6 +2794,70 @@ async function ghReadRaw(path){
   });
   if(!r.ok) return null;
   return safeParse(await r.text());
+}
+async function ghDelete(path,msg){
+  const job=ghQueue.then(async()=>{
+    const sha=await ghShaOf(path); if(!sha) return false;
+    const body={message:msg||('delete '+path),sha:sha};
+    if(share.branch) body.branch=share.branch;
+    await ghFetch(path,{method:'DELETE',body:JSON.stringify(body)});
+    return true;
+  });
+  ghQueue=job.catch(()=>{});
+  return job;
+}
+async function poolMap(items,limit,worker){
+  const out=new Array(items.length); let i=0;
+  async function run(){ while(i<items.length){ const k=i++; try{ out[k]=await worker(items[k],k); }catch(e){ out[k]=null; } } }
+  await Promise.all(Array.from({length:Math.min(limit,Math.max(1,items.length))},run));
+  return out;
+}
+function slugOf(i){ return 'p-'+String(i+1).padStart(2,'0'); }
+function slimUnits(units){
+  return (units||[]).map(u=>{
+    const o={idx:u.idx,zh:u.zh,en:u.en,kind:u.kind||'para'};
+    if(u.zp) o.zp=u.zp;
+    if(u.ep) o.ep=u.ep;
+    if(u.ai&&u.ai.length) o.ai=u.ai;
+    if(u.weak) o.weak=true;
+    if(u.loose) o.loose=true;
+    return o;
+  });
+}
+async function fetchShards(mode,index){
+  const list=(index&&index.files)||[];
+  const units=await poolMap(list,6,async(f)=>{
+    const p=CORPUS_DIR+(f.shard||'');
+    try{
+      let d=null;
+      if(mode==='same'){
+        const r=await fetch(p+'?t='+Date.now(),{cache:'no-store'});
+        if(r.ok) d=await r.json();
+      }else{
+        const g=await ghRead(p); d=g.data;
+      }
+      return (d&&Array.isArray(d.units))?d.units:[];
+    }catch(e){ return []; }
+  });
+  return {updatedAt:index&&index.updatedAt, folders:(index&&index.folders)||[],
+    files:list.map((f,i)=>({name:f.name,folder:f.folder||'',origin:f.origin||'github',urls:f.urls||{},importedAt:f.importedAt||null,units:units[i]||[]}))};
+}
+async function fetchSharedCorpus(){
+  if(location.protocol!=='file:'){
+    try{
+      const r=await fetch(CORPUS_INDEX+'?t='+Date.now(),{cache:'no-store'});
+      if(r.ok){ const idx=await r.json(); if(idx&&Array.isArray(idx.files)) return await fetchShards('same',idx); }
+    }catch(e){}
+    try{
+      const r2=await fetch('data/corpus.json?t='+Date.now(),{cache:'no-store'});
+      if(r2.ok){ const d=await r2.json(); if(d&&Array.isArray(d.files)) return d; }
+    }catch(e){}
+  }
+  if(ghReady()){
+    try{ const g=await ghRead(CORPUS_INDEX); if(g.data&&Array.isArray(g.data.files)) return await fetchShards('api',g.data); }catch(e){}
+    try{ const c=await ghRead('data/corpus.json'); if(c.data&&Array.isArray(c.data.files)) return c.data; }catch(e){}
+  }
+  return null;
 }
 async function ghRead(path){
   try{
@@ -2856,7 +2933,7 @@ function renderRepoSummary(){
   if(corpus.length>3){ L.appendChild(el('div','hint','等共 '+corpus.length+' 个文件')); }
   try{
     const kb=Math.round(JSON.stringify(corpusSnapshot()).length/1024);
-    if(kb>900){ L.appendChild(el('div','hint','当前语料约 '+kb+' KB，已接近单文件上限（约 1MB），建议精简或拆分文件')); }
+    if(kb>900){ L.appendChild(el('div','hint','当前语料约 '+kb+' KB，已按文件分片存储，可正常查询；首次打开加载会稍慢')); }
   }catch(e){}
 }
 async function refreshFromRepo(){
@@ -2864,13 +2941,12 @@ async function refreshFromRepo(){
   if(st) st.textContent='正在从仓库拉取…';
   let fetched=false, nf=0, ng=0;
   try{
-    if(location.protocol!=='file:'){
-      const b='?t='+Date.now();
-      const r=await fetch('data/corpus.json'+b,{cache:'no-store'});
-      if(r.ok){ nf=pullToCorpus(await r.json()); fetched=true; }
-      const rg=await fetch('data/glossary.json'+b,{cache:'no-store'});
-      if(rg.ok){ const d=await rg.json(); if(d&&Array.isArray(d.items)){ glossary=d.items; ng=glossary.length; } }
-    }
+    const d=await fetchSharedCorpus();
+    if(d){ nf=pullToCorpus(d); fetched=true; }
+    try{
+      const rg=await fetch('data/glossary.json?t='+Date.now(),{cache:'no-store'});
+      if(rg.ok){ const g=await rg.json(); if(g&&Array.isArray(g.items)){ glossary=g.items; ng=glossary.length; } }
+    }catch(e){}
   }catch(e){}
   if(!fetched&&ghReady()){
     try{ const r2=await pullShared(); nf=r2.files; ng=r2.gloss; fetched=true; }catch(e2){ if(st) st.textContent='刷新失败：'+e2.message; }
@@ -2883,6 +2959,29 @@ async function refreshFromRepo(){
 }
 let autoPushT=null;
 function setRepoStat(t){ const e=$('repoStat'); if(e) e.textContent=t; }
+async function pushCorpusSharded(msg){
+  let remoteIdx=null;
+  try{ const r=await ghRead(CORPUS_INDEX); remoteIdx=r.data; }catch(e){}
+  const remoteMap=new Map((((remoteIdx&&remoteIdx.files)||[])).map(x=>[x.shard,x]));
+  const localShards=new Set();
+  const entries=[];
+  for(let i=0;i<corpus.length;i++){
+    const f=corpus[i];
+    const shard=slugOf(i);
+    localShards.add(shard);
+    const body={units:slimUnits(f.units)};
+    const len=JSON.stringify(body).length;
+    const prev=remoteMap.get(shard);
+    const same=prev && prev.bytes===len && prev.units===f.units.length && prev.name===f.name;
+    if(!same) await ghWrite(CORPUS_DIR+shard,body,msg);
+    entries.push({name:f.name,folder:f.folder||'',origin:f.origin||'',urls:f.urls||{},importedAt:f.importedAt||null,shard:shard,units:f.units.length,bytes:len});
+  }
+  for(const [shard] of remoteMap){
+    if(!localShards.has(shard)){ try{ await ghDelete(CORPUS_DIR+shard,'remove '+shard); }catch(e){} }
+  }
+  await ghWrite(CORPUS_INDEX,{updatedAt:new Date().toISOString(),version:2,folders:folders.slice(),files:entries},msg);
+  return entries.length;
+}
 function scheduleRepoPush(){
   if(!ghReady()){ setRepoStat('未配置仓库，改动只在本机'); return; }
   clearTimeout(autoPushT);
@@ -2890,8 +2989,7 @@ function scheduleRepoPush(){
   autoPushT=setTimeout(async()=>{
     setRepoStat('同步中…');
     try{
-      const snap=corpusSnapshot();
-      await ghWrite('data/corpus.json',{updatedAt:new Date().toISOString(),folders:folders.slice(),files:snap.files},'update corpus '+new Date().toISOString().slice(0,16));
+      await pushCorpusSharded('update corpus '+new Date().toISOString().slice(0,16));
       setRepoStat('已同步到仓库 · 约 1 分钟后访客可见');
     }catch(e){ setRepoStat('同步失败：'+e.message+'（可点「保存到仓库」重试）'); }
   },1500);
@@ -2910,8 +3008,8 @@ function pullToCorpus(d){
   return incoming.length;
 }
 async function pullShared(){
-  const c=await ghRead('data/corpus.json');
-  const nf=pullToCorpus(c.data);
+  const d=await fetchSharedCorpus();
+  const nf=pullToCorpus(d);
   const g=await ghRead('data/glossary.json');
   let ng=0;
   if(g.data&&Array.isArray(g.data.items)){ glossary=g.data.items; ng=glossary.length; }
@@ -2921,18 +3019,52 @@ async function pullShared(){
 async function bootShared(){
   if(location.protocol==='file:'){ setDataSrc('本地文件（未部署）'); return; }
   try{
-    const buster='?t='+Date.now();
-    const r=await fetch('data/corpus.json'+buster,{cache:'no-store'});
-    const rg=await fetch('data/glossary.json'+buster,{cache:'no-store'});
+    const d=await fetchSharedCorpus();
     let nf=0, ng=0;
-    if(r.ok){ const d=await r.json(); nf=pullToCorpus(d); }
-    if(rg.ok){ const d2=await rg.json(); if(d2&&Array.isArray(d2.items)&&d2.items.length){ glossary=d2.items; ng=glossary.length; } }
+    if(d) nf=pullToCorpus(d);
+    try{
+      const rg=await fetch('data/glossary.json?t='+Date.now(),{cache:'no-store'});
+      if(rg.ok){ const g=await rg.json(); if(g&&Array.isArray(g.items)&&g.items.length){ glossary=g.items; ng=glossary.length; } }
+    }catch(e){}
     setDataSrc((nf||ng)?('共享数据 · 已加载 '+nf+' 个语料文件 / '+ng+' 条术语'):'共享数据为空');
     renderFiles(); renderStats(); renderGloss();
   }catch(e){ setDataSrc('未连接仓库（使用本地数据）'); }
 }
 /* SECTION: csv */
 function csvCell(s){ s=String(s==null?'':s); return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s; }
+function backupLocal(){
+  const payload={tool:'中英对照术语查询器',version:2,exportedAt:new Date().toISOString(),
+    folders:folders.slice(),files:corpusSnapshot().files,glossary:glossary};
+  const txt=JSON.stringify(payload,null,1);
+  const kb=Math.round(txt.length/1024);
+  const a=el('a');
+  a.href=URL.createObjectURL(new Blob([txt],{type:'application/json'}));
+  const d=new Date(), p2=n=>String(n).padStart(2,'0');
+  a.download='术语查询器离线备份-'+d.getFullYear()+p2(d.getMonth()+1)+p2(d.getDate())+'-'+p2(d.getHours())+p2(d.getMinutes())+'.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  const st=$('backupStat');
+  if(st) st.textContent='已下载备份：'+corpus.length+' 个语料文件 / '+allUnits().length+' 组对照 / '+glossary.length+' 条词语（约 '+kb+' KB）。断网时打开本页即可用本机缓存查询。';
+  toast('备份已下载到本机');
+}
+function restoreLocal(file){
+  const fr=new FileReader();
+  fr.onload=()=>{
+    let d=null;
+    try{ d=JSON.parse(String(fr.result)); }catch(e){ toast('备份文件不是有效的 JSON'); return; }
+    const files=Array.isArray(d)?d:((d&&Array.isArray(d.files))?d.files:null);
+    if(!files){ toast('备份文件缺少 files 字段'); return; }
+    if(!confirm('将用备份覆盖本机当前语料与词语表（共 '+files.length+' 个文件）。仓库里的数据不受影响，确认恢复？')) return;
+    corpus=files.map(f=>({name:f.name,folder:f.folder||'',origin:f.origin||'backup',urls:f.urls||{},importedAt:f.importedAt||null,
+      units:(f.units||[]).map(u=>Object.assign({file:f.name,ai:null,kind:'para'},u))}));
+    if(Array.isArray(d.folders)) folders=d.folders.slice();
+    if(Array.isArray(d.glossary)) glossary=d.glossary.map(g=>({zh:g.zh,en:g.en,src:g.src||'',note:g.note||'',ts:g.ts||Date.now()}));
+    renderFiles(); renderStats(); renderGloss(); saveCorpus(); saveGloss(); saveFolders(); renderRepoSummary();
+    const st=$('backupStat');
+    if(st) st.textContent='已从备份恢复：'+corpus.length+' 个文件 / '+allUnits().length+' 组 / '+glossary.length+' 条词语（仅在本机，未提交仓库）';
+    toast('恢复完成，可离线查询');
+  };
+  fr.readAsText(file,'utf-8');
+}
 function exportCSV(){
   if(!glossary.length){ toast('词语表为空'); return; }
   const rows=[['中文','英文译法','出处','来源方式','时间']];
@@ -3056,6 +3188,7 @@ function openCorpusWindow(){
   try{ w=window.open(u,'_blank'); }catch(e){}
   if(w){
     try{ if(!w.location.hash){ w.location.href=u; } w.focus(); }catch(e){}
+
     return;
   }
   location.hash='corpus';
@@ -3070,6 +3203,8 @@ async function init(){
   bindSafe('q','keydown',function(e){ if(e&&e.key==='Enter') runSearch(); });
   bindSafe('btnRefresh','click',refreshFromRepo);
   bindSafe('btnEditCorpus','click',openCorpusWindow);
+  bindSafe('btnBackupLocal','click',backupLocal);
+  bindSafe('btnRestoreLocal','click',()=>{ const f=$('restoreFile'); if(f) f.click(); });
   const fromIdb=await loadFromIDB();
   if(fromIdb&&corpus.length){ renderStats(); renderFiles(); }
   renderStats(); renderFiles(); renderGloss(); renderRecent(); fillCfg(); renderRepoSummary();
@@ -3079,9 +3214,8 @@ async function init(){
     if(!ghReady()){ if(st) st.textContent='请先在设置里填仓库与令牌'; $('mask').classList.add('on'); return; }
     if(st) st.textContent='提交中…';
     try{
-      const snap=corpusSnapshot();
-      await ghWrite('data/corpus.json',{updatedAt:new Date().toISOString(),folders:folders.slice(),files:snap.files},'update corpus '+new Date().toISOString().slice(0,16));
-      if(st) st.textContent='已保存到仓库，约 1 分钟后所有访客可见';
+      const n=await pushCorpusSharded('update corpus '+new Date().toISOString().slice(0,16));
+      if(st) st.textContent='已保存 '+n+' 个语料文件到仓库，约 1 分钟后访客可见';
       toast('语料已提交到仓库');
     }catch(e){ if(st) st.textContent='提交失败：'+e.message; }
   });
@@ -3205,6 +3339,7 @@ async function init(){
 
   $('btnImp2').addEventListener('click',()=>$('csvfile2').click());
   $('csvfile2').addEventListener('change',e=>{ if(e.target.files[0]) importCSV(e.target.files[0]); e.target.value=''; });
+  $('restoreFile').addEventListener('change',e=>{ if(e.target.files[0]) restoreLocal(e.target.files[0]); e.target.value=''; });
 
   window.addEventListener('message',e=>{
     if(!e||!e.data||e.data.type!=='cn2en-glossary') return;
